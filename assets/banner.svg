@@ -1,5 +1,9 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 260" width="1200" height="260">
   <defs>
+    <style>
+      @font-face{font-family:'Cinzel';font-style:normal;font-weight:900;src:url('data:font/woff2;base64,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') format('woff2');}
+    </style>
+
     <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" style="stop-color:#04080f"/>
       <stop offset="50%" style="stop-color:#060a12"/>
@@ -18,7 +22,6 @@
       <stop offset="100%" style="stop-color:#a855f7;stop-opacity:0"/>
     </linearGradient>
 
-    <!-- RUNE: multi-layer glow + turbulence shimmer -->
     <filter id="runeF" x="-90%" y="-90%" width="280%" height="280%">
       <feGaussianBlur stdDeviation="22" result="b22"/>
       <feGaussianBlur in="SourceGraphic" stdDeviation="9" result="b9"/>
@@ -37,7 +40,6 @@
   </defs>
 
   <g clip-path="url(#clip)">
-    <!-- Background + CRT -->
     <rect width="1200" height="260" fill="url(#bg)"/>
     <rect width="1200" height="260" fill="url(#crt)"/>
 
@@ -55,31 +57,56 @@
       <line x1="1040" y1="0" x2="1040" y2="260"/><line x1="1120" y1="0" x2="1120" y2="260"/>
     </g>
 
-    <!-- Top accent -->
     <rect y="0" width="1200" height="2" fill="url(#accent)"/>
 
-    <!-- Global horizontal scan sweep -->
+    <!-- Global scan sweep -->
     <line x1="0" y1="0" x2="1200" y2="0" stroke="#00d4ff" stroke-width="0.8" opacity="0">
       <animate attributeName="y1" values="-2;262;-2" dur="14s" repeatCount="indefinite"/>
       <animate attributeName="y2" values="-2;262;-2" dur="14s" repeatCount="indefinite"/>
       <animate attributeName="opacity" values="0;0.07;0.07;0" dur="14s" repeatCount="indefinite" keyTimes="0;0.04;0.18;1"/>
     </line>
 
-    <!-- Corner HUD brackets -->
-    <polyline points="32,10 10,10 10,32" fill="none" stroke="#00d4ff" stroke-width="1.5">
-      <animate attributeName="opacity" values="0.25;0.75;0.25" dur="4s" repeatCount="indefinite"/>
-    </polyline>
-    <polyline points="1168,10 1190,10 1190,32" fill="none" stroke="#a855f7" stroke-width="1.5">
-      <animate attributeName="opacity" values="0.25;0.75;0.25" dur="4s" begin="2s" repeatCount="indefinite"/>
-    </polyline>
-    <polyline points="32,250 10,250 10,228" fill="none" stroke="#00d4ff" stroke-width="1.5">
-      <animate attributeName="opacity" values="0.25;0.75;0.25" dur="4s" begin="1s" repeatCount="indefinite"/>
-    </polyline>
-    <polyline points="1168,250 1190,250 1190,228" fill="none" stroke="#a855f7" stroke-width="1.5">
-      <animate attributeName="opacity" values="0.25;0.75;0.25" dur="4s" begin="3s" repeatCount="indefinite"/>
-    </polyline>
+    <!-- Corner HUD brackets with readouts -->
+    <g fill="none" stroke="#00d4ff" stroke-width="1.5">
+      <polyline points="32,10 10,10 10,32">
+        <animate attributeName="opacity" values="0.3;0.8;0.3" dur="4s" repeatCount="indefinite"/>
+      </polyline>
+    </g>
+    <g fill="none" stroke="#a855f7" stroke-width="1.5">
+      <polyline points="1168,10 1190,10 1190,32">
+        <animate attributeName="opacity" values="0.3;0.8;0.3" dur="4s" begin="2s" repeatCount="indefinite"/>
+      </polyline>
+    </g>
+    <g fill="none" stroke="#00d4ff" stroke-width="1.5">
+      <polyline points="32,250 10,250 10,228">
+        <animate attributeName="opacity" values="0.3;0.8;0.3" dur="4s" begin="1s" repeatCount="indefinite"/>
+      </polyline>
+    </g>
+    <g fill="none" stroke="#a855f7" stroke-width="1.5">
+      <polyline points="1168,250 1190,250 1190,228">
+        <animate attributeName="opacity" values="0.3;0.8;0.3" dur="4s" begin="3s" repeatCount="indefinite"/>
+      </polyline>
+    </g>
+    <!-- Corner readouts -->
+    <text x="14" y="8" font-family="'SF Mono',monospace" font-size="7" fill="#00d4ff" opacity="0.45">SYS:OK</text>
+    <text x="1118" y="8" font-family="'SF Mono',monospace" font-size="7" fill="#a855f7" opacity="0.45" text-anchor="end">23 RULES</text>
+    <text x="14" y="258" font-family="'SF Mono',monospace" font-size="7" fill="#00d4ff" opacity="0.45">v1.1.0</text>
+    <text x="1118" y="258" font-family="'SF Mono',monospace" font-size="7" fill="#a855f7" opacity="0.45" text-anchor="end">MIT</text>
 
-    <!-- Ambient glow (rune area) -->
+    <!-- ===== RUNE ZONE ===== -->
+    <!-- Pulse rings (2 offset) -->
+    <circle cx="112" cy="130" r="78" fill="none" stroke="#00d4ff">
+      <animate attributeName="r" values="78;136;136" dur="3.2s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.55;0.55;0" dur="3.2s" repeatCount="indefinite" keyTimes="0;0.4;1"/>
+      <animate attributeName="stroke-width" values="1.8;0.4;0" dur="3.2s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="112" cy="130" r="78" fill="none" stroke="#00d4ff">
+      <animate attributeName="r" values="78;136;136" dur="3.2s" begin="1.6s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.55;0.55;0" dur="3.2s" begin="1.6s" repeatCount="indefinite" keyTimes="0;0.4;1"/>
+      <animate attributeName="stroke-width" values="1.8;0.4;0" dur="3.2s" begin="1.6s" repeatCount="indefinite"/>
+    </circle>
+
+    <!-- Ambient glow -->
     <ellipse cx="112" cy="130" rx="110" ry="75" fill="#00d4ff" opacity="0.04">
       <animate attributeName="opacity" values="0.03;0.07;0.03" dur="4s" repeatCount="indefinite"/>
     </ellipse>
@@ -111,51 +138,89 @@
       <animate attributeName="opacity" values="0;0.4;0" dur="4.7s" begin="1.8s" repeatCount="indefinite"/>
     </circle>
 
-    <!-- Rune — shimmer glow layer -->
+    <!-- Rune glow layer (shimmer filter) -->
     <text x="112" y="172" font-family="serif" font-size="150" text-anchor="middle" fill="#00d4ff" filter="url(#runeF)">&#x16B2;
       <animate attributeName="opacity" values="0.12;0.28;0.12" dur="3.5s" repeatCount="indefinite"/>
     </text>
-    <!-- Rune — main crisp layer -->
+    <!-- Rune main -->
     <text x="112" y="172" font-family="serif" font-size="150" text-anchor="middle" fill="#cce8ff" opacity="0.84">&#x16B2;</text>
 
-    <!-- Vertical divider -->
+    <!-- Divider -->
     <rect x="215" y="28" width="1" height="204" fill="url(#divider)"/>
 
-    <!-- CENTER: foreignObject — KENAZ + content -->
-    <foreignObject x="234" y="0" width="742" height="260">
-      <div xmlns="http://www.w3.org/1999/xhtml" style="width:742px;height:260px;display:flex;flex-direction:column;justify-content:center;padding:0;box-sizing:border-box;overflow:hidden;">
+    <!-- ===== KENAZ — native SVG text with Cinzel ===== -->
+    <!-- Outline trace (animates in first, then fades) -->
+    <text x="237" y="138" font-family="Cinzel,serif" font-size="100" font-weight="900" letter-spacing="6"
+      fill="none" stroke="#00d4ff" stroke-width="0.8" opacity="0">KENAZ
+      <animate attributeName="opacity" values="0;0.5;0.5;0" dur="1.8s" fill="freeze"/>
+      <animate attributeName="stroke-dasharray" values="0 3000;3000 0" dur="1.8s" fill="freeze"/>
+    </text>
+    <!-- Solid fill (delays after trace) -->
+    <text x="237" y="138" font-family="Cinzel,serif" font-size="100" font-weight="900" letter-spacing="6"
+      fill="#eaf4ff" opacity="0"
+      style="filter:drop-shadow(0 0 18px rgba(0,212,255,0.5)) drop-shadow(0 0 55px rgba(0,212,255,0.18));">KENAZ
+      <animate attributeName="opacity" from="0" to="0.97" begin="1.2s" dur="0.6s" fill="freeze"/>
+      <animateTransform attributeName="transform" type="translate" values="0,3;0,0" begin="1.2s" dur="0.6s" fill="freeze" additive="sum"/>
+    </text>
+    <!-- Glitch layer (pure SVG, loops every 8s) -->
+    <text x="237" y="138" font-family="Cinzel,serif" font-size="100" font-weight="900" letter-spacing="6"
+      fill="#00d4ff" opacity="0">KENAZ
+      <animate attributeName="opacity" values="0;0;0.35;0;0.2;0;0" dur="8s" repeatCount="indefinite"
+               keyTimes="0;0.855;0.86;0.865;0.875;0.88;1"/>
+      <animateTransform attributeName="transform" type="translate"
+        values="0,0;0,0;-3,0;3,0;-1,0;0,0;0,0" dur="8s" repeatCount="indefinite"
+        keyTimes="0;0.855;0.86;0.865;0.875;0.88;1" additive="sum"/>
+    </text>
 
-        <div style="font-family:'Cinzel',Trajan,serif;font-size:86px;font-weight:900;letter-spacing:6px;line-height:1;color:#eaf4ff;animation:glitch 8s infinite;text-shadow:0 0 22px rgba(0,212,255,0.55),0 0 75px rgba(0,212,255,0.2);">KENAZ</div>
+    <!-- Subtitle -->
+    <text x="237" y="160" font-family="'SF Mono','Fira Code',monospace" font-size="11" letter-spacing="4.5" fill="#00d4ff" opacity="0">
+      &#x16B2; &#160;&#183;&#160; FUTHARK &#160;&#183;&#160; KNOWLEDGE &#160;&#183;&#160; TORCH
+      <animate attributeName="opacity" from="0" to="0.8" begin="1.8s" dur="0.5s" fill="freeze"/>
+    </text>
 
-        <div style="font-family:'SF Mono','Fira Code',Consolas,monospace;font-size:11px;letter-spacing:5px;color:#00d4ff;margin-top:6px;opacity:0.8;">&#x16B2; &#160;&#183;&#160; FUTHARK &#160;&#183;&#160; KNOWLEDGE &#160;&#183;&#160; TORCH</div>
+    <!-- Tagline -->
+    <text x="237" y="183" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif" font-size="15" fill="#8b949e" opacity="0">
+      Security auditor for Claude Code plugins &amp; MCP servers
+      <animate attributeName="opacity" from="0" to="1" begin="2.1s" dur="0.4s" fill="freeze"/>
+    </text>
 
-        <div style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-size:15px;color:#8b949e;margin-top:9px;letter-spacing:0.2px;">Security auditor for Claude Code plugins &amp; MCP servers</div>
+    <!-- Scan bar -->
+    <g opacity="0">
+      <animate attributeName="opacity" from="0" to="1" begin="2.3s" dur="0.3s" fill="freeze"/>
+      <text x="237" y="204" font-family="'SF Mono',monospace" font-size="8.5" letter-spacing="2" fill="#00d4ff" opacity="0.4">
+        SCANNING THREAT DATABASE &#160;&#183;&#160; 23 RULES
+      </text>
+      <rect x="237" y="210" width="300" height="5" rx="2.5" fill="rgba(0,212,255,0.07)" stroke="rgba(0,212,255,0.12)" stroke-width="1"/>
+      <rect x="237" y="210" width="0" height="5" rx="2.5">
+        <animate attributeName="width" values="0;264;264;300;0" dur="5s" begin="2.3s" repeatCount="indefinite"/>
+        <animate attributeName="fill" values="#00d4ff;#00d4ff;#a855f7;#a855f7;#00d4ff" dur="5s" begin="2.3s" repeatCount="indefinite"/>
+      </rect>
+    </g>
 
-        <div style="margin-top:16px;">
-          <div style="font-family:'SF Mono',Consolas,monospace;font-size:9px;letter-spacing:2.5px;color:rgba(0,212,255,0.4);margin-bottom:5px;">SCANNING THREAT DATABASE &#160;&#183;&#160; 23 RULES</div>
-          <div style="width:300px;height:3px;background:rgba(0,212,255,0.07);border-radius:2px;overflow:hidden;border:1px solid rgba(0,212,255,0.12);">
-            <div style="height:100%;background:linear-gradient(90deg,#00d4ff,#a855f7);border-radius:2px;animation:bar 5s ease-in-out infinite;width:0%;"></div>
-          </div>
-        </div>
+    <!-- Badges -->
+    <g font-family="'SF Mono','Fira Code',monospace" font-size="10.5" font-weight="600" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" begin="2.5s" dur="0.4s" fill="freeze"/>
+      <!-- v1.1.0 -->
+      <rect x="237" y="224" width="50" height="22" rx="4" fill="rgba(0,212,255,0.07)" stroke="rgba(0,212,255,0.22)" stroke-width="1"/>
+      <text x="262" y="239" fill="#79c0ff" text-anchor="middle">v1.1.0</text>
+      <!-- MIT -->
+      <rect x="294" y="224" width="38" height="22" rx="4" fill="rgba(86,211,100,0.07)" stroke="rgba(86,211,100,0.22)" stroke-width="1"/>
+      <text x="313" y="239" fill="#56d364" text-anchor="middle">MIT</text>
+      <!-- 99 tests -->
+      <rect x="339" y="224" width="72" height="22" rx="4" fill="rgba(86,211,100,0.07)" stroke="rgba(86,211,100,0.22)" stroke-width="1"/>
+      <text x="375" y="239" fill="#56d364" text-anchor="middle">99 tests &#x2713;</text>
+      <!-- offline -->
+      <rect x="418" y="224" width="84" height="22" rx="4" fill="rgba(0,212,255,0.07)" stroke="rgba(0,212,255,0.22)" stroke-width="1"/>
+      <text x="460" y="239" fill="#79c0ff" text-anchor="middle">100% offline</text>
+      <!-- zero deps -->
+      <rect x="509" y="224" width="72" height="22" rx="4" fill="rgba(168,85,247,0.07)" stroke="rgba(168,85,247,0.22)" stroke-width="1"/>
+      <text x="545" y="239" fill="#d2a8ff" text-anchor="middle">zero deps</text>
+      <!-- OWASP -->
+      <rect x="588" y="224" width="94" height="22" rx="4" fill="rgba(227,179,65,0.07)" stroke="rgba(227,179,65,0.22)" stroke-width="1"/>
+      <text x="635" y="239" fill="#e3b341" text-anchor="middle">OWASP Top 10</text>
+    </g>
 
-        <div style="display:flex;gap:5px;margin-top:13px;flex-wrap:nowrap;">
-          <span style="padding:2px 8px;background:rgba(0,212,255,0.07);border:1px solid rgba(0,212,255,0.22);border-radius:4px;font-family:'SF Mono',Consolas,monospace;font-size:10.5px;font-weight:600;color:#79c0ff;white-space:nowrap;">v1.1.0</span>
-          <span style="padding:2px 8px;background:rgba(86,211,100,0.07);border:1px solid rgba(86,211,100,0.22);border-radius:4px;font-family:'SF Mono',Consolas,monospace;font-size:10.5px;font-weight:600;color:#56d364;white-space:nowrap;">MIT</span>
-          <span style="padding:2px 8px;background:rgba(86,211,100,0.07);border:1px solid rgba(86,211,100,0.22);border-radius:4px;font-family:'SF Mono',Consolas,monospace;font-size:10.5px;font-weight:600;color:#56d364;white-space:nowrap;">99 tests &#10003;</span>
-          <span style="padding:2px 8px;background:rgba(0,212,255,0.07);border:1px solid rgba(0,212,255,0.22);border-radius:4px;font-family:'SF Mono',Consolas,monospace;font-size:10.5px;font-weight:600;color:#79c0ff;white-space:nowrap;">100% offline</span>
-          <span style="padding:2px 8px;background:rgba(168,85,247,0.07);border:1px solid rgba(168,85,247,0.22);border-radius:4px;font-family:'SF Mono',Consolas,monospace;font-size:10.5px;font-weight:600;color:#d2a8ff;white-space:nowrap;">zero deps</span>
-          <span style="padding:2px 8px;background:rgba(227,179,65,0.07);border:1px solid rgba(227,179,65,0.22);border-radius:4px;font-family:'SF Mono',Consolas,monospace;font-size:10.5px;font-weight:600;color:#e3b341;white-space:nowrap;">OWASP Top 10</span>
-        </div>
-
-        <style>
-          @font-face{font-family:'Cinzel';font-style:normal;font-weight:900;src:url('data:font/woff2;base64,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') format('woff2');}
-          @keyframes glitch{0%,85%,100%{text-shadow:0 0 22px rgba(0,212,255,0.55),0 0 75px rgba(0,212,255,0.2);transform:none}86%{text-shadow:3px 0 #00d4ff,-3px 0 #f05;transform:translateX(-2px)}87%{text-shadow:-4px 0 #00d4ff,4px 0 #f05;transform:translateX(3px)}88%{text-shadow:2px 0 #f05,-2px 0 #00d4ff;transform:translateX(-1px)}89%{text-shadow:0 0 22px rgba(0,212,255,0.55);transform:none}}
-          @keyframes bar{0%{width:0%}50%{width:88%}85%{width:88%}95%{width:100%}97%{width:0%}100%{width:0%}}
-        </style>
-      </div>
-    </foreignObject>
-
-    <!-- TERMINAL PANEL — pure SVG (cross-compatible) -->
+    <!-- ===== TERMINAL PANEL ===== -->
     <rect x="992" y="26" width="192" height="210" rx="8" fill="#010409" stroke="#1c2333" stroke-width="1"/>
     <rect x="992" y="26" width="192" height="28" rx="8" fill="#0d1117"/>
     <rect x="992" y="40" width="192" height="14" fill="#0d1117"/>
@@ -164,12 +229,10 @@
     <circle cx="1040" cy="40" r="5" fill="#28c840"/>
     <text x="1088" y="44.5" font-family="monospace" font-size="9" fill="#3d444d" text-anchor="middle">kenaz &#x2014; scan</text>
 
-    <!-- Terminal lines — SVG animate for universal compat -->
     <g font-family="'SF Mono','Fira Code',monospace" font-size="10">
       <text x="1003" y="80" fill="#3d8ef0" opacity="0">$ /kenaz git-helper
         <animate attributeName="opacity" from="0" to="1" begin="0.3s" dur="0.25s" fill="freeze"/>
       </text>
-      <!-- separator drawn as animated line -->
       <line x1="1003" y1="91" x2="1003" y2="91" stroke="#30363d" stroke-width="0.6" opacity="0">
         <animate attributeName="x2" from="1003" to="1178" begin="0.9s" dur="0.4s" fill="freeze"/>
         <animate attributeName="opacity" from="0" to="1" begin="0.9s" dur="0.1s" fill="freeze"/>
@@ -190,7 +253,6 @@
         <tspan fill="#56d364">&#x2713;</tspan><tspan> PA-015  prompt-inject</tspan>
         <animate attributeName="opacity" from="0" to="1" begin="2.9s" dur="0.2s" fill="freeze"/>
       </text>
-      <!-- separator 2 -->
       <line x1="1003" y1="163" x2="1003" y2="163" stroke="#30363d" stroke-width="0.6" opacity="0">
         <animate attributeName="x2" from="1003" to="1178" begin="3.4s" dur="0.4s" fill="freeze"/>
         <animate attributeName="opacity" from="0" to="1" begin="3.4s" dur="0.1s" fill="freeze"/>
@@ -201,22 +263,19 @@
       <text x="1003" y="193" fill="#30363d" opacity="0">sha256: a3f7c2&#x2026;
         <animate attributeName="opacity" from="0" to="1" begin="4.4s" dur="0.2s" fill="freeze"/>
       </text>
-      <!-- blinking cursor -->
       <text x="1085" y="193" fill="#00d4ff" opacity="0">&#x258B;
         <animate attributeName="opacity" from="0" to="1" begin="4.5s" dur="0.1s" fill="freeze"/>
         <animate attributeName="opacity" values="1;0;1;0" dur="0.9s" begin="4.6s" repeatCount="indefinite"/>
       </text>
     </g>
 
-    <!-- Terminal scan sweep line -->
+    <!-- Terminal scan sweep -->
     <rect x="992" y="62" width="192" height="1" fill="#00d4ff" opacity="0">
       <animate attributeName="y" values="62;234;62" dur="7s" repeatCount="indefinite"/>
       <animate attributeName="opacity" values="0;0.18;0;0" dur="7s" repeatCount="indefinite" keyTimes="0;0.25;0.6;1"/>
     </rect>
 
-    <!-- Bottom accent -->
     <rect y="258" width="1200" height="2" fill="url(#accent)" opacity="0.45"/>
-    <!-- Outer border -->
     <rect width="1200" height="260" fill="none" stroke="#1c2333" stroke-width="1.5" rx="14"/>
   </g>
 </svg>
