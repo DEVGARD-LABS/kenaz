@@ -194,21 +194,21 @@
       </text>
       <rect x="237" y="210" width="748" height="5" rx="2.5" fill="rgba(5,80,174,0.07)" stroke="rgba(5,80,174,0.15)" stroke-width="1"/>
       <rect x="237" y="210" width="0" height="5" rx="2.5">
-        <animate attributeName="width" values="0;660;660;748;0" dur="5s" begin="2.3s" repeatCount="indefinite"/>
-        <animate attributeName="fill" values="#0550ae;#0550ae;#6e40c9;#6e40c9;#0550ae" dur="5s" begin="2.3s" repeatCount="indefinite"/>
-        <animate attributeName="opacity" values="1;1;0;0" keyTimes="0;0.65;0.73;1" dur="5s" begin="2.3s" repeatCount="indefinite" calcMode="linear"/>
+        <animate attributeName="width" values="0;660;660;748;748;0" keyTimes="0;0.25;0.5;0.75;0.85;1" dur="5s" begin="2.3s" repeatCount="indefinite" calcMode="linear"/>
+        <animate attributeName="fill" values="#0550ae;#0550ae;#6e40c9;#6e40c9;#6e40c9;#0550ae" keyTimes="0;0.25;0.5;0.75;0.85;1" dur="5s" begin="2.3s" repeatCount="indefinite" calcMode="linear"/>
+        <animate attributeName="opacity" values="1;1;1;1;0;0" keyTimes="0;0.25;0.5;0.77;0.84;1" dur="5s" begin="2.3s" repeatCount="indefinite" calcMode="linear"/>
       </rect>
       <!-- Laser edge: outer glow -->
       <line x1="237" y1="205" x2="237" y2="220" stroke="#0550ae" stroke-width="6" opacity="0">
-        <animate attributeName="x1" values="237;897;897;985;237" dur="5s" begin="2.3s" repeatCount="indefinite"/>
-        <animate attributeName="x2" values="237;897;897;985;237" dur="5s" begin="2.3s" repeatCount="indefinite"/>
-        <animate attributeName="opacity" values="0;0.22;0.22;0;0" dur="5s" begin="2.3s" repeatCount="indefinite"/>
+        <animate attributeName="x1" values="237;897;897;985;985;237" keyTimes="0;0.25;0.5;0.75;0.85;1" dur="5s" begin="2.3s" repeatCount="indefinite" calcMode="linear"/>
+        <animate attributeName="x2" values="237;897;897;985;985;237" keyTimes="0;0.25;0.5;0.75;0.85;1" dur="5s" begin="2.3s" repeatCount="indefinite" calcMode="linear"/>
+        <animate attributeName="opacity" values="0;0.22;0.22;0.22;0;0" keyTimes="0;0.25;0.5;0.76;0.83;1" dur="5s" begin="2.3s" repeatCount="indefinite" calcMode="linear"/>
       </line>
       <!-- Laser edge: bright core -->
       <line x1="237" y1="207" x2="237" y2="218" stroke="#0d1117" stroke-width="1.5" opacity="0">
-        <animate attributeName="x1" values="237;897;897;985;237" dur="5s" begin="2.3s" repeatCount="indefinite"/>
-        <animate attributeName="x2" values="237;897;897;985;237" dur="5s" begin="2.3s" repeatCount="indefinite"/>
-        <animate attributeName="opacity" values="0;0.85;0.85;0;0" dur="5s" begin="2.3s" repeatCount="indefinite"/>
+        <animate attributeName="x1" values="237;897;897;985;985;237" keyTimes="0;0.25;0.5;0.75;0.85;1" dur="5s" begin="2.3s" repeatCount="indefinite" calcMode="linear"/>
+        <animate attributeName="x2" values="237;897;897;985;985;237" keyTimes="0;0.25;0.5;0.75;0.85;1" dur="5s" begin="2.3s" repeatCount="indefinite" calcMode="linear"/>
+        <animate attributeName="opacity" values="0;0.85;0.85;0.85;0;0" keyTimes="0;0.25;0.5;0.76;0.83;1" dur="5s" begin="2.3s" repeatCount="indefinite" calcMode="linear"/>
       </line>
     </g>
 
