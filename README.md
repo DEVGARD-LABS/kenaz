@@ -7,15 +7,6 @@
   </a>
 </div>
 
-<div align="center">
-<sub>Claude Code native &nbsp;·&nbsp; Zero deps &nbsp;·&nbsp; 100% offline &nbsp;·&nbsp; MIT &nbsp;·&nbsp; <a href="https://github.com/DEVGARD-LABS/kenaz/releases">v1.1.0</a></sub>
-</div>
-
-<div align="center">
-
-*ᚲ &nbsp; Named for the Norse torch rune — light against what hides in the dark.*
-
-</div>
 
 ---
 

@@ -183,9 +183,9 @@
     </text>
 
     <!-- Tagline -->
-    <text x="237" y="183" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif" font-size="16" fill="#424a53" opacity="0">
-      Security auditor for Claude Code plugins &amp; MCP servers
-      <animate attributeName="opacity" from="0" to="1" begin="2.1s" dur="0.4s" fill="freeze"/>
+    <text x="237" y="183" font-family="Georgia,'Times New Roman',serif" font-style="italic" font-size="16" letter-spacing="0.5" fill="#7a5416" opacity="0">
+      &#x16B2;&#160;&#160; Named for the Norse torch rune — light against what hides in the dark.
+      <animate attributeName="opacity" from="0" to="0.9" begin="2.1s" dur="0.4s" fill="freeze"/>
     </text>
 
     <!-- Scan bar -->
