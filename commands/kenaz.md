@@ -1,56 +1,91 @@
 ---
 name: kenaz
-description: Audits a Claude Code plugin, MCP server, or AI agent for security risks before installation. Supports SHA-256 cache to skip re-auditing unchanged plugins.
+description: Audita la seguridad de un plugin o MCP server antes de instalarlo. Soporta cache SHA-256, inventario de herramientas auditadas con detección de rug pulls, y self-test. El auditor oficial de ZYRO.
 arguments:
   - name: plugin
-    description: "Plugin name (e.g. git-helper), local path, or 'self' for self-test"
+    description: "Nombre del plugin (ej: security-guidance), ruta local, o 'self' para self-test"
     required: true
-allowed-tools: Read, Glob, Grep, Bash, Agent
+allowed-tools: Read, Glob, Grep, Bash, Agent, mcp__brain-local__brain_add
 ---
 
-# /kenaz — Security audit before installing
+# /kenaz — Auditoría de seguridad antes de instalar
 
-Audits `$ARGUMENTS` for security risks before installation.
+Audita el plugin o MCP server `$ARGUMENTS` antes de instalarlo.
 
-### 0. Self-test (only if $ARGUMENTS == "self")
+### 0. Self-test (solo si $ARGUMENTS == "self")
 
-If the argument is `self`, audit Kenaz's own directory (`~/.claude/plugins/marketplaces/*/kenaz/`) and report whether the auditor itself has been tampered with.
-
-### 1. Check SHA-256 cache
-
+Si el argumento es `self`, audita los propios archivos de Kenaz (`~/.claude/agents/kenaz.md`, `~/.claude/commands/kenaz.md`) y reporta si el auditor ha sido comprometido. También ejecuta:
 ```bash
-bash ~/.claude/plugins/marketplaces/claude-plugins-official/plugins/kenaz/scripts/audit-cache.sh <plugin-dir>
+bash ~/.claude/scripts/plugin-inventory.sh --check
+bash ~/.claude/scripts/plugin-inventory.sh --check-mcps
 ```
 
-- **CACHE HIT** → show previous result with date. Ask: "Re-audit? Content hasn't changed since last audit."
-- **CACHE MISS** → proceed with full audit
+### 1. Verificar caché SHA-256
 
-### 2. Locate the plugin
-
-Search in order:
-1. If `$ARGUMENTS` is an existing local path: use directly
-2. If `$ARGUMENTS` is a name: look in `~/.claude/plugins/marketplaces/claude-plugins-official/plugins/{name}/`
-3. If not found: inform the user and stop
-
-### 3. Audit
-
-Launch the `@kenaz` agent with the plugin path. The agent produces a report with PA-XXX rule IDs and OWASP references.
-
-### 4. Save to cache
-
-After the audit, store the result:
 ```bash
-bash <scripts-path>/audit-cache.sh <plugin-dir> --write "<VERDICT>" '["PA-001","PA-007"]'
+bash ~/.claude/scripts/audit-cache.sh <plugin-dir>
 ```
 
-### 5. Present result
+- **CACHE HIT** → mostrar resultado anterior con fecha. Preguntar: "¿Re-auditar? El contenido no ha cambiado desde la última auditoría."
+- **CACHE MISS** → continuar con auditoría completa
 
-Display the full report with the final verdict.
+### 2. Localizar el plugin o MCP server
 
-### 6. If SAFE or SAFE_WITH_CODE
+Busca en este orden:
+1. Si `$ARGUMENTS` es una ruta local que existe: usar directamente
+2. Si `$ARGUMENTS` es un nombre: buscar en `~/.claude/plugins/marketplaces/claude-plugins-official/plugins/{nombre}/`
+3. Si no se encuentra: informar al usuario y parar
 
-Ask the user if they want to activate the plugin.
+### 3. Auditar
 
-### If DO_NOT_INSTALL
+Lanza el agente `@kenaz` con la ruta del plugin encontrado. El agente genera el informe con IDs PA-XXX y referencias OWASP AA + MCP.
 
-Reject without exception. Do not ask the user if they want to install anyway.
+### 4. Guardar en caché
+
+```bash
+bash ~/.claude/scripts/audit-cache.sh <plugin-dir> --write "<VEREDICTO>" '["PA-001","PA-007"]'
+```
+
+### 5. Registrar en inventario (SIEMPRE tras auditoría)
+
+Si el veredicto es SEGURO o SEGURO+CÓDIGO:
+```bash
+bash ~/.claude/scripts/plugin-inventory.sh --register <plugin-dir> "<VEREDICTO>"
+```
+
+Esto permite detectar rug pulls futuros: si el plugin cambia después de instalado, `--check` lo detectará.
+
+### 6. Presentar resultado
+
+Muestra el informe completo con el veredicto final.
+
+### 7. Registrar en Brain
+
+Guarda el resultado como neurona:
+- type: source
+- title: "Auditoría Kenaz: {nombre} — {VEREDICTO}"
+- content: resumen del informe en 2-3 líneas + reglas detectadas
+- tags: ["kenaz-audit", "seguridad", "{nombre-del-plugin}"]
+
+### 8. Si es SEGURO o SEGURO+CÓDIGO
+
+Pregunta al usuario si quiere activar el plugin.
+
+### Si es NO_INSTALAR
+
+Rechazar sin excepción. No preguntar al usuario si quiere instalarlo de todas formas.
+
+---
+
+## Lista de herramientas auditadas
+
+```bash
+bash ~/.claude/scripts/plugin-inventory.sh --list
+```
+
+## Detectar rug pulls en herramientas ya instaladas
+
+```bash
+bash ~/.claude/scripts/plugin-inventory.sh --check
+bash ~/.claude/scripts/plugin-inventory.sh --check-mcps
+```
