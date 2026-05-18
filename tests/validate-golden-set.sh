@@ -27,38 +27,60 @@ fail() {
   echo "  ✗ $1"
 }
 
+# Build list of available categories.
+# The 'malicious' category is gitignored in the public repo to prevent
+# publishing bypass patterns. Tests skip it gracefully if absent.
+CATEGORIES=()
+for cat in safe malicious ambiguous; do
+  [[ -d "$GOLDEN_SET/$cat" ]] && CATEGORIES+=("$cat")
+done
+[[ ${#CATEGORIES[@]} -eq 0 ]] && { echo "No golden-set categories found — is golden-set/ missing?"; exit 1; }
+[[ -n "$VERBOSE" ]] && echo "  Categories present: ${CATEGORIES[*]}"
+
+iter_plugins() {
+  local cat
+  for cat in "${CATEGORIES[@]}"; do
+    shopt -s nullglob
+    local dir
+    for dir in "$GOLDEN_SET/$cat"/*/; do
+      echo "$dir"
+    done
+    shopt -u nullglob
+  done
+}
+
 echo "=== kenaz: golden set validation ==="
 echo ""
 
 # ── 1. Every plugin has plugin.md ──────────────────────────────────
 echo "[ plugins have plugin.md ]"
-for dir in "$GOLDEN_SET"/{safe,malicious,ambiguous}/*/; do
+while IFS= read -r dir; do
   name=$(basename "$dir")
   if [[ -f "$dir/plugin.md" ]]; then
     ok "$name/plugin.md exists"
   else
     fail "$name: missing plugin.md"
   fi
-done
+done < <(iter_plugins)
 
 echo ""
 
 # ── 2. Every plugin has expected.json ──────────────────────────────
 echo "[ plugins have expected.json ]"
-for dir in "$GOLDEN_SET"/{safe,malicious,ambiguous}/*/; do
+while IFS= read -r dir; do
   name=$(basename "$dir")
   if [[ -f "$dir/expected.json" ]]; then
     ok "$name/expected.json exists"
   else
     fail "$name: missing expected.json"
   fi
-done
+done < <(iter_plugins)
 
 echo ""
 
 # ── 3. expected.json has required fields ───────────────────────────
 echo "[ expected.json has required fields ]"
-for dir in "$GOLDEN_SET"/{safe,malicious,ambiguous}/*/; do
+while IFS= read -r dir; do
   name=$(basename "$dir")
   f="$dir/expected.json"
   [[ -f "$f" ]] || continue
@@ -68,14 +90,14 @@ for dir in "$GOLDEN_SET"/{safe,malicious,ambiguous}/*/; do
 
   [[ "$has_verdict" == "ok" ]] && ok "$name: has verdict" || fail "$name: expected.json missing 'verdict'"
   [[ "$has_rules" == "ok" ]] && ok "$name: has expected_rules" || fail "$name: expected.json missing 'expected_rules'"
-done
+done < <(iter_plugins)
 
 echo ""
 
 # ── 4. Verdict values are valid ────────────────────────────────────
 echo "[ verdict values are valid ]"
 VALID_VERDICTS=("SAFE" "SAFE_WITH_CODE" "REVIEW" "DO_NOT_INSTALL")
-for dir in "$GOLDEN_SET"/{safe,malicious,ambiguous}/*/; do
+while IFS= read -r dir; do
   name=$(basename "$dir")
   f="$dir/expected.json"
   [[ -f "$f" ]] || continue
@@ -84,13 +106,13 @@ for dir in "$GOLDEN_SET"/{safe,malicious,ambiguous}/*/; do
   valid=false
   for v in "${VALID_VERDICTS[@]}"; do [[ "$verdict" == "$v" ]] && valid=true; done
   $valid && ok "$name: verdict='$verdict'" || fail "$name: invalid verdict '$verdict'"
-done
+done < <(iter_plugins)
 
 echo ""
 
 # ── 5. PA-XXX rules in expected_rules exist in PA-RULES.md ─────────
 echo "[ PA-XXX rules in expected_rules exist in PA-RULES.md ]"
-for dir in "$GOLDEN_SET"/{safe,malicious,ambiguous}/*/; do
+while IFS= read -r dir; do
   name=$(basename "$dir")
   f="$dir/expected.json"
   [[ -f "$f" ]] || continue
@@ -103,7 +125,7 @@ for dir in "$GOLDEN_SET"/{safe,malicious,ambiguous}/*/; do
       fail "$name: $rule NOT found in PA-RULES.md"
     fi
   done
-done
+done < <(iter_plugins)
 
 echo ""
 

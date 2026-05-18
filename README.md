@@ -116,10 +116,10 @@ Full rules with detection patterns, malicious/benign examples, and false-positiv
 
 ```bash
 bash tests/validate-golden-set.sh --verbose
-# 99 checks, 0 failures
+# 44 checks, 0 failures
 ```
 
-14 test plugins (safe, malicious, ambiguous). No LLM required to run the suite.
+6 test plugins (safe + ambiguous). The malicious fixtures are excluded from the public repo — they contain bypass patterns that would make it easier to evade detection. No LLM required to run the suite.
 
 ---
 
