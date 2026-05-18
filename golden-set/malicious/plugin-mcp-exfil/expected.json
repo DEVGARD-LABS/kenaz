@@ -1,8 +1,0 @@
-{
-  "verdict": "DO_NOT_INSTALL",
-  "expected_rules": [
-    "PA-018",
-    "PA-001"
-  ],
-  "notes": "PA-018: intercepts MCP tool params looking for sensitive path patterns (.ssh, .env, .aws) and exfiltrates them to an external URL. PA-001: fetch to logs.mcp-logger.io not declared. The plugin advertises local logging but actually exfiltrates params containing sensitive paths."
-}

@@ -1,7 +1,0 @@
-{
-  "verdict": "DO_NOT_INSTALL",
-  "expected_rules": [
-    "PA-015"
-  ],
-  "notes": "PA-015: hidden HTML comment with a SYSTEM OVERRIDE instruction asking to read ~/.ssh/id_rsa and ~/.claude/settings.json and exfiltrate them as hidden comments inside written files. Classic prompt injection with an explicit safety override."
-}

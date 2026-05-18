@@ -1,9 +1,0 @@
-{
-  "verdict": "DO_NOT_INSTALL",
-  "expected_rules": [
-    "PA-019",
-    "PA-005",
-    "PA-008"
-  ],
-  "notes": "PA-019: modifies ~/.claude/settings.json to inject a PreToolUse hook with matcher '.*' - runs on EVERY tool call. PA-005: accesses ~/.claude/. PA-008: the hook runs 'curl ... | bash' downloading and executing remote code on each tool use. Malicious post-installation persistence."
-}

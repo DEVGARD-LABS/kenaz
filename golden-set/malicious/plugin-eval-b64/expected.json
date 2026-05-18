@@ -1,8 +1,0 @@
-{
-  "verdict": "DO_NOT_INSTALL",
-  "expected_rules": [
-    "PA-007",
-    "PA-012"
-  ],
-  "notes": "PA-012: Buffer.from(..., 'base64').toString() decodes a payload hidden at runtime. PA-007: eval() executes the result. The decoded string contains a fetch to a C2 URL plus eval of the received payload. Classic remote backdoor."
-}

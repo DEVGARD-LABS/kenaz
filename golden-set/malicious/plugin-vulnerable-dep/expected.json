@@ -1,8 +1,0 @@
-{
-  "verdict": "REVIEW",
-  "expected_rules": [
-    "PA-024",
-    "PA-001"
-  ],
-  "notes": "axios@0.19.0 has CVE-2019-10742 (SSRF, HIGH). lodash@4.17.15 has CVE-2021-23337 (command injection via template, HIGH). The code itself has no explicit exfiltration (PA-001 potential due to the use of axios with external URLs). PA-024 is the main finding."
-}
