@@ -1,18 +1,20 @@
 <div align="center">
-  <picture>
-    <source media="(prefers-color-scheme: light)" srcset="assets/banner-light.svg">
-    <img src="assets/banner.svg" alt="Kenaz — Security auditor for Claude Code plugins & MCP servers" width="100%" />
-  </picture>
+  <a href="#install">
+    <picture>
+      <source media="(prefers-color-scheme: light)" srcset="assets/banner-light.svg">
+      <img src="assets/banner.svg" alt="Kenaz — Security auditor for Claude Code plugins & MCP servers" width="100%" />
+    </picture>
+  </a>
 </div>
 
 <div align="center">
 
 [![Version](https://img.shields.io/badge/version-1.1.0-3d8ef0?style=flat-square)](https://github.com/devgard-labs/kenaz/releases)
-[![License](https://img.shields.io/badge/license-MIT-56d364?style=flat-square)](LICENSE)
-[![Tests](https://img.shields.io/badge/tests-99%20passing-56d364?style=flat-square)](tests/)
-[![Offline](https://img.shields.io/badge/100%25-offline-3d8ef0?style=flat-square)](#)
-[![Zero deps](https://img.shields.io/badge/deps-zero-d2a8ff?style=flat-square)](#)
-[![OWASP](https://img.shields.io/badge/OWASP-Agentic_Top_10-e3b341?style=flat-square)](rules/PA-RULES.md)
+[![License](https://img.shields.io/badge/license-MIT-3d8ef0?style=flat-square)](LICENSE)
+[![Tests](https://img.shields.io/badge/tests-99%20passing-3d8ef0?style=flat-square)](tests/)
+[![Offline](https://img.shields.io/badge/100%25-offline-3d8ef0?style=flat-square)](#features)
+[![Zero deps](https://img.shields.io/badge/deps-zero-d2a8ff?style=flat-square)](plugin.json)
+[![OWASP](https://img.shields.io/badge/OWASP-Agentic_Top_10-d2a8ff?style=flat-square)](rules/PA-RULES.md)
 
 **Audit Claude Code plugins and MCP servers before they run on your machine.**  
 23 detection rules · OWASP mapped · SHA-256 cache · SARIF output · CI ready
