@@ -12,6 +12,10 @@ Real-world audit results from running Kenaz against widely-used Claude Code plug
 
 | Plugin | Author | Type | Verdict | Key finding | Audited |
 |---|---|---|---|---|---|
+| feature-dev | Anthropic | Agents + Command (.md) | ✅ SAFE | Multi-agent feature workflow (explorer/architect/reviewer) — .md only, no executable code, KillShell is a declared native tool not custom code | 2026-05-18 |
+| frontend-design | Anthropic | Skill (.md) | ✅ SAFE | Pure .md design guidance — zero executable code, no network, no filesystem access | 2026-05-18 |
+| mcp-server-dev | Anthropic | Skills + References (.md) | ✅ SAFE | Build guides for MCP servers — WebFetch to `claude.com/docs` is documented and justified, no executable code | 2026-05-18 |
+| playground | Anthropic | Skill + Templates (.md) | ✅ SAFE | HTML playground generator — JS in SKILL.md is example text to guide generation, not plugin code | 2026-05-18 |
 | security-guidance | Anthropic | Hook (Python) | ✅ SAFE_WITH_CODE | Defensive PreToolUse hook — no network, no secrets access, transparent logic | 2026-05-18 |
 | commit-commands | Anthropic | Commands (.md) | ✅ SAFE | Pure .md slash commands with explicit `allowed-tools` restrictions | 2026-05-18 |
 | code-review | Anthropic | Agent (.md) | ✅ SAFE | Multi-agent PR review, `allowed-tools` scoped to `gh` read operations | 2026-05-18 |
