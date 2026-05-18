@@ -214,15 +214,20 @@
       <animate attributeName="opacity" from="0" to="0.8" begin="1.8s" dur="0.5s" fill="freeze"/>
     </text>
 
-    <!-- Tagline glow -->
-    <text x="237" y="183" font-family="Georgia,'Times New Roman',serif" font-style="italic" font-size="19" letter-spacing="0.5" fill="#ffd878" filter="url(#gTight)" opacity="0">
+    <!-- Tagline wide glow -->
+    <text x="237" y="183" font-family="Georgia,'Times New Roman',serif" font-style="italic" font-size="21" fill="#ffdd55" filter="url(#gWide)" opacity="0">
       &#x16B2;&#160;&#160; Named for the Norse torch rune — light against what hides in the dark.
-      <animate attributeName="opacity" from="0" to="0.45" begin="2.1s" dur="0.4s" fill="freeze"/>
+      <animate attributeName="opacity" from="0" to="0.28" begin="2.1s" dur="0.4s" fill="freeze"/>
+    </text>
+    <!-- Tagline tight glow -->
+    <text x="237" y="183" font-family="Georgia,'Times New Roman',serif" font-style="italic" font-size="21" fill="#ffc844" filter="url(#gTight)" opacity="0">
+      &#x16B2;&#160;&#160; Named for the Norse torch rune — light against what hides in the dark.
+      <animate attributeName="opacity" from="0" to="0.8" begin="2.1s" dur="0.4s" fill="freeze"/>
     </text>
     <!-- Tagline main -->
-    <text x="237" y="183" font-family="Georgia,'Times New Roman',serif" font-style="italic" font-size="19" letter-spacing="0.5" fill="#d4a853" opacity="0">
+    <text x="237" y="183" font-family="Georgia,'Times New Roman',serif" font-style="italic" font-size="21" fill="#e8c060" opacity="0">
       &#x16B2;&#160;&#160; Named for the Norse torch rune — light against what hides in the dark.
-      <animate attributeName="opacity" from="0" to="0.92" begin="2.1s" dur="0.4s" fill="freeze"/>
+      <animate attributeName="opacity" from="0" to="0.95" begin="2.1s" dur="0.4s" fill="freeze"/>
     </text>
 
     <!-- Scan bar -->
