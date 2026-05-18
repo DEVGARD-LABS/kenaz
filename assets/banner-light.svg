@@ -35,16 +35,24 @@
     <filter id="gTight" x="-12%" y="-45%" width="124%" height="190%">
       <feGaussianBlur stdDeviation="5"/>
     </filter>
-    <linearGradient id="titleGrad" x1="237" y1="0" x2="650" y2="0" gradientUnits="userSpaceOnUse">
-      <stop offset="0%" style="stop-color:#0550ae"/>
-      <stop offset="55%" style="stop-color:#0d1117"/>
+    <linearGradient id="titleGrad" x1="237" y1="0" x2="690" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0%"   style="stop-color:#0550ae"/>
+      <stop offset="25%"  style="stop-color:#0b3d8a"/>
+      <stop offset="55%"  style="stop-color:#152d55"/>
+      <stop offset="80%"  style="stop-color:#0d1117"/>
       <stop offset="100%" style="stop-color:#0d1117"/>
     </linearGradient>
+    <filter id="grain" x="0%" y="0%" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="4" stitchTiles="stitch" result="noise"/>
+      <feColorMatrix type="matrix" in="noise"
+        values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0.04 0.04 0.04 0 0"/>
+    </filter>
     <clipPath id="clip"><rect width="1200" height="260" rx="14"/></clipPath>
   </defs>
 
   <g clip-path="url(#clip)">
     <rect width="1200" height="260" fill="url(#bg)"/>
+    <rect width="1200" height="260" filter="url(#grain)"/>
 
     <!-- Grid -->
     <g opacity="0.18" stroke="#d0d7de" stroke-width="0.5">
@@ -82,7 +90,7 @@
     <polyline points="1168,250 1190,250 1190,228" fill="none" stroke="#6e40c9" stroke-width="1.5">
       <animate attributeName="opacity" values="0.2;0.6;0.2" dur="4s" begin="3s" repeatCount="indefinite"/>
     </polyline>
-    <text x="14" y="8" font-family="'SF Mono',monospace" font-size="7" fill="#0550ae" opacity="0.5">SYS:OK</text>
+    <text x="14" y="8" font-family="'SF Mono',monospace" font-size="7" fill="#0550ae" opacity="0.5">ARMED</text>
     <text x="1118" y="8" font-family="'SF Mono',monospace" font-size="7" fill="#6e40c9" opacity="0.5" text-anchor="end">23 RULES</text>
     <text x="14" y="258" font-family="'SF Mono',monospace" font-size="7" fill="#0550ae" opacity="0.5">v1.1.0</text>
     <text x="1118" y="258" font-family="'SF Mono',monospace" font-size="7" fill="#6e40c9" opacity="0.5" text-anchor="end">MIT</text>
@@ -133,31 +141,31 @@
     <rect x="215" y="28" width="1" height="204" fill="url(#divider)"/>
 
     <!-- KENAZ outline trace -->
-    <text x="237" y="138" font-family="Cinzel,serif" font-size="100" font-weight="900" letter-spacing="6"
+    <text x="237" y="138" font-family="Cinzel,serif" font-size="100" font-weight="900" letter-spacing="12"
       fill="none" stroke="#0550ae" stroke-width="0.8" opacity="0">KENAZ
       <animate attributeName="opacity" values="0;0.4;0.4;0" dur="1.8s" fill="freeze"/>
       <animate attributeName="stroke-dasharray" values="0 3000;3000 0" dur="1.8s" fill="freeze"/>
     </text>
     <!-- KENAZ wide glow -->
-    <text x="237" y="138" font-family="Cinzel,serif" font-size="100" font-weight="900" letter-spacing="6"
+    <text x="237" y="138" font-family="Cinzel,serif" font-size="100" font-weight="900" letter-spacing="12"
       fill="#0550ae" filter="url(#gWide)" opacity="0">KENAZ
       <animate attributeName="opacity" from="0" to="0.25" begin="1.2s" dur="0.6s" fill="freeze"/>
       <animateTransform attributeName="transform" type="translate" values="0,3;0,0" begin="1.2s" dur="0.6s" fill="freeze" additive="sum"/>
     </text>
     <!-- KENAZ tight glow -->
-    <text x="237" y="138" font-family="Cinzel,serif" font-size="100" font-weight="900" letter-spacing="6"
+    <text x="237" y="138" font-family="Cinzel,serif" font-size="100" font-weight="900" letter-spacing="12"
       fill="#1e6ff1" filter="url(#gTight)" opacity="0">KENAZ
       <animate attributeName="opacity" from="0" to="0.18" begin="1.2s" dur="0.6s" fill="freeze"/>
       <animateTransform attributeName="transform" type="translate" values="0,3;0,0" begin="1.2s" dur="0.6s" fill="freeze" additive="sum"/>
     </text>
     <!-- KENAZ solid dark -->
-    <text x="237" y="138" font-family="Cinzel,serif" font-size="100" font-weight="900" letter-spacing="6"
+    <text x="237" y="138" font-family="Cinzel,serif" font-size="100" font-weight="900" letter-spacing="12"
       fill="url(#titleGrad)" opacity="0">KENAZ
       <animate attributeName="opacity" from="0" to="0.95" begin="1.2s" dur="0.6s" fill="freeze"/>
       <animateTransform attributeName="transform" type="translate" values="0,3;0,0" begin="1.2s" dur="0.6s" fill="freeze" additive="sum"/>
     </text>
     <!-- KENAZ glitch -->
-    <text x="237" y="138" font-family="Cinzel,serif" font-size="100" font-weight="900" letter-spacing="6"
+    <text x="237" y="138" font-family="Cinzel,serif" font-size="100" font-weight="900" letter-spacing="12"
       fill="#0550ae" opacity="0">KENAZ
       <animate attributeName="opacity" values="0;0;0.25;0;0.15;0;0" dur="8s" repeatCount="indefinite"
                keyTimes="0;0.855;0.86;0.865;0.875;0.88;1"/>
@@ -189,6 +197,18 @@
         <animate attributeName="width" values="0;660;660;748;0" dur="5s" begin="2.3s" repeatCount="indefinite"/>
         <animate attributeName="fill" values="#0550ae;#0550ae;#6e40c9;#6e40c9;#0550ae" dur="5s" begin="2.3s" repeatCount="indefinite"/>
       </rect>
+      <!-- Laser edge: outer glow -->
+      <line x1="237" y1="205" x2="237" y2="220" stroke="#0550ae" stroke-width="6" opacity="0">
+        <animate attributeName="x1" values="237;897;897;985;237" dur="5s" begin="2.3s" repeatCount="indefinite"/>
+        <animate attributeName="x2" values="237;897;897;985;237" dur="5s" begin="2.3s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0;0.22;0.22;0;0" dur="5s" begin="2.3s" repeatCount="indefinite"/>
+      </line>
+      <!-- Laser edge: bright core -->
+      <line x1="237" y1="207" x2="237" y2="218" stroke="#0d1117" stroke-width="1.5" opacity="0">
+        <animate attributeName="x1" values="237;897;897;985;237" dur="5s" begin="2.3s" repeatCount="indefinite"/>
+        <animate attributeName="x2" values="237;897;897;985;237" dur="5s" begin="2.3s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0;0.85;0.85;0;0" dur="5s" begin="2.3s" repeatCount="indefinite"/>
+      </line>
     </g>
 
     <!-- Badges — monochromatic blue palette -->
