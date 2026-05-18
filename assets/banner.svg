@@ -22,6 +22,14 @@
       <stop offset="100%" style="stop-color:#a855f7;stop-opacity:0"/>
     </linearGradient>
 
+    <!-- Glow filters for KENAZ and rune -->
+    <filter id="gWide" x="-30%" y="-80%" width="160%" height="260%">
+      <feGaussianBlur stdDeviation="18"/>
+    </filter>
+    <filter id="gTight" x="-12%" y="-45%" width="124%" height="190%">
+      <feGaussianBlur stdDeviation="5"/>
+    </filter>
+
     <filter id="runeF" x="-90%" y="-90%" width="280%" height="280%">
       <feGaussianBlur stdDeviation="22" result="b22"/>
       <feGaussianBlur in="SourceGraphic" stdDeviation="9" result="b9"/>
@@ -126,12 +134,20 @@
       <animate attributeName="opacity" values="0;0.4;0" dur="4.7s" begin="1.8s" repeatCount="indefinite"/>
     </circle>
 
-    <!-- Rune glow layer (shimmer filter) -->
-    <text x="112" y="172" font-family="serif" font-size="150" text-anchor="middle" fill="#00d4ff" filter="url(#runeF)">&#x16B2;
-      <animate attributeName="opacity" values="0.12;0.28;0.12" dur="3.5s" repeatCount="indefinite"/>
+    <!-- Rune wide glow (pulsing, cyan) -->
+    <text x="112" y="172" font-family="serif" font-size="150" text-anchor="middle" fill="#00d4ff" filter="url(#gWide)">&#x16B2;
+      <animate attributeName="opacity" values="0.28;0.48;0.28" dur="3.5s" repeatCount="indefinite"/>
     </text>
-    <!-- Rune main -->
-    <text x="112" y="172" font-family="serif" font-size="150" text-anchor="middle" fill="#cce8ff" opacity="0.84">&#x16B2;</text>
+    <!-- Rune tight glow (pulsing, brighter cyan) -->
+    <text x="112" y="172" font-family="serif" font-size="150" text-anchor="middle" fill="#5ae4ff" filter="url(#gTight)">&#x16B2;
+      <animate attributeName="opacity" values="0.35;0.55;0.35" dur="3.5s" repeatCount="indefinite"/>
+    </text>
+    <!-- Rune shimmer layer (turbulence displacement) -->
+    <text x="112" y="172" font-family="serif" font-size="150" text-anchor="middle" fill="#00d4ff" filter="url(#runeF)">&#x16B2;
+      <animate attributeName="opacity" values="0.08;0.18;0.08" dur="3.5s" repeatCount="indefinite"/>
+    </text>
+    <!-- Rune main crisp -->
+    <text x="112" y="172" font-family="serif" font-size="150" text-anchor="middle" fill="#cce8ff" opacity="0.86">&#x16B2;</text>
 
     <!-- Divider -->
     <rect x="215" y="28" width="1" height="204" fill="url(#divider)"/>
@@ -143,10 +159,21 @@
       <animate attributeName="opacity" values="0;0.5;0.5;0" dur="1.8s" fill="freeze"/>
       <animate attributeName="stroke-dasharray" values="0 3000;3000 0" dur="1.8s" fill="freeze"/>
     </text>
-    <!-- Solid fill (delays after trace) -->
+    <!-- Wide cyan glow layer -->
     <text x="237" y="138" font-family="Cinzel,serif" font-size="100" font-weight="900" letter-spacing="6"
-      fill="#eaf4ff" opacity="0"
-      style="filter:drop-shadow(0 0 18px rgba(0,212,255,0.5)) drop-shadow(0 0 55px rgba(0,212,255,0.18));">KENAZ
+      fill="#00d4ff" filter="url(#gWide)" opacity="0">KENAZ
+      <animate attributeName="opacity" from="0" to="0.42" begin="1.2s" dur="0.6s" fill="freeze"/>
+      <animateTransform attributeName="transform" type="translate" values="0,3;0,0" begin="1.2s" dur="0.6s" fill="freeze" additive="sum"/>
+    </text>
+    <!-- Tight cyan glow layer -->
+    <text x="237" y="138" font-family="Cinzel,serif" font-size="100" font-weight="900" letter-spacing="6"
+      fill="#5ae4ff" filter="url(#gTight)" opacity="0">KENAZ
+      <animate attributeName="opacity" from="0" to="0.28" begin="1.2s" dur="0.6s" fill="freeze"/>
+      <animateTransform attributeName="transform" type="translate" values="0,3;0,0" begin="1.2s" dur="0.6s" fill="freeze" additive="sum"/>
+    </text>
+    <!-- Solid white fill -->
+    <text x="237" y="138" font-family="Cinzel,serif" font-size="100" font-weight="900" letter-spacing="6"
+      fill="#eaf4ff" opacity="0">KENAZ
       <animate attributeName="opacity" from="0" to="0.97" begin="1.2s" dur="0.6s" fill="freeze"/>
       <animateTransform attributeName="transform" type="translate" values="0,3;0,0" begin="1.2s" dur="0.6s" fill="freeze" additive="sum"/>
     </text>
