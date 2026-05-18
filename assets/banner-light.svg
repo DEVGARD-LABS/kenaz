@@ -3,33 +3,23 @@
     <style>
       @font-face{font-family:'Cinzel';font-style:normal;font-weight:900;src:url('data:font/woff2;base64,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') format('woff2');}
     </style>
-
     <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#04080f"/>
-      <stop offset="50%" style="stop-color:#060a12"/>
-      <stop offset="100%" style="stop-color:#080c14"/>
+      <stop offset="0%" style="stop-color:#f0f6fc"/>
+      <stop offset="50%" style="stop-color:#f6f8fa"/>
+      <stop offset="100%" style="stop-color:#eef2f7"/>
     </linearGradient>
     <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" style="stop-color:#00d4ff;stop-opacity:0"/>
-      <stop offset="20%" style="stop-color:#00d4ff"/>
-      <stop offset="80%" style="stop-color:#a855f7"/>
-      <stop offset="100%" style="stop-color:#a855f7;stop-opacity:0"/>
+      <stop offset="0%" style="stop-color:#0550ae;stop-opacity:0"/>
+      <stop offset="20%" style="stop-color:#0550ae"/>
+      <stop offset="80%" style="stop-color:#6e40c9"/>
+      <stop offset="100%" style="stop-color:#6e40c9;stop-opacity:0"/>
     </linearGradient>
     <linearGradient id="divider" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" style="stop-color:#00d4ff;stop-opacity:0"/>
-      <stop offset="40%" style="stop-color:#00d4ff;stop-opacity:0.55"/>
-      <stop offset="60%" style="stop-color:#a855f7;stop-opacity:0.55"/>
-      <stop offset="100%" style="stop-color:#a855f7;stop-opacity:0"/>
+      <stop offset="0%" style="stop-color:#0550ae;stop-opacity:0"/>
+      <stop offset="40%" style="stop-color:#0550ae;stop-opacity:0.5"/>
+      <stop offset="60%" style="stop-color:#6e40c9;stop-opacity:0.5"/>
+      <stop offset="100%" style="stop-color:#6e40c9;stop-opacity:0"/>
     </linearGradient>
-
-    <!-- Glow filters for KENAZ and rune -->
-    <filter id="gWide" x="-30%" y="-80%" width="160%" height="260%">
-      <feGaussianBlur stdDeviation="18"/>
-    </filter>
-    <filter id="gTight" x="-12%" y="-45%" width="124%" height="190%">
-      <feGaussianBlur stdDeviation="5"/>
-    </filter>
-
     <filter id="runeF" x="-90%" y="-90%" width="280%" height="280%">
       <feGaussianBlur stdDeviation="22" result="b22"/>
       <feGaussianBlur in="SourceGraphic" stdDeviation="9" result="b9"/>
@@ -39,20 +29,20 @@
       <feDisplacementMap in="SourceGraphic" in2="noise" scale="3.5" xChannelSelector="R" yChannelSelector="G" result="shimmer"/>
       <feMerge><feMergeNode in="b22"/><feMergeNode in="b9"/><feMergeNode in="shimmer"/></feMerge>
     </filter>
-
-    <pattern id="crt" x="0" y="0" width="1200" height="4" patternUnits="userSpaceOnUse">
-      <rect width="1200" height="2" fill="transparent"/>
-      <rect y="2" width="1200" height="2" fill="rgba(0,0,0,0.1)"/>
-    </pattern>
+    <filter id="gWide" x="-30%" y="-80%" width="160%" height="260%">
+      <feGaussianBlur stdDeviation="18"/>
+    </filter>
+    <filter id="gTight" x="-12%" y="-45%" width="124%" height="190%">
+      <feGaussianBlur stdDeviation="5"/>
+    </filter>
     <clipPath id="clip"><rect width="1200" height="260" rx="14"/></clipPath>
   </defs>
 
   <g clip-path="url(#clip)">
     <rect width="1200" height="260" fill="url(#bg)"/>
-    <rect width="1200" height="260" fill="url(#crt)"/>
 
     <!-- Grid -->
-    <g opacity="0.028" stroke="#00d4ff" stroke-width="0.5">
+    <g opacity="0.18" stroke="#d0d7de" stroke-width="0.5">
       <line x1="0" y1="40" x2="1200" y2="40"/><line x1="0" y1="80" x2="1200" y2="80"/>
       <line x1="0" y1="120" x2="1200" y2="120"/><line x1="0" y1="160" x2="1200" y2="160"/>
       <line x1="0" y1="200" x2="1200" y2="200"/><line x1="0" y1="240" x2="1200" y2="240"/>
@@ -68,119 +58,103 @@
     <rect y="0" width="1200" height="2" fill="url(#accent)"/>
 
     <!-- Global scan sweep -->
-    <line x1="0" y1="0" x2="1200" y2="0" stroke="#00d4ff" stroke-width="0.8" opacity="0">
+    <line x1="0" y1="0" x2="1200" y2="0" stroke="#0550ae" stroke-width="0.8" opacity="0">
       <animate attributeName="y1" values="-2;262;-2" dur="14s" repeatCount="indefinite"/>
       <animate attributeName="y2" values="-2;262;-2" dur="14s" repeatCount="indefinite"/>
-      <animate attributeName="opacity" values="0;0.07;0.07;0" dur="14s" repeatCount="indefinite" keyTimes="0;0.04;0.18;1"/>
+      <animate attributeName="opacity" values="0;0.06;0.06;0" dur="14s" repeatCount="indefinite" keyTimes="0;0.04;0.18;1"/>
     </line>
 
-    <!-- Corner HUD brackets with readouts -->
-    <g fill="none" stroke="#00d4ff" stroke-width="1.5">
-      <polyline points="32,10 10,10 10,32">
-        <animate attributeName="opacity" values="0.3;0.8;0.3" dur="4s" repeatCount="indefinite"/>
-      </polyline>
-    </g>
-    <g fill="none" stroke="#a855f7" stroke-width="1.5">
-      <polyline points="1168,10 1190,10 1190,32">
-        <animate attributeName="opacity" values="0.3;0.8;0.3" dur="4s" begin="2s" repeatCount="indefinite"/>
-      </polyline>
-    </g>
-    <g fill="none" stroke="#00d4ff" stroke-width="1.5">
-      <polyline points="32,250 10,250 10,228">
-        <animate attributeName="opacity" values="0.3;0.8;0.3" dur="4s" begin="1s" repeatCount="indefinite"/>
-      </polyline>
-    </g>
-    <g fill="none" stroke="#a855f7" stroke-width="1.5">
-      <polyline points="1168,250 1190,250 1190,228">
-        <animate attributeName="opacity" values="0.3;0.8;0.3" dur="4s" begin="3s" repeatCount="indefinite"/>
-      </polyline>
-    </g>
-    <!-- Corner readouts -->
-    <text x="14" y="8" font-family="'SF Mono',monospace" font-size="7" fill="#00d4ff" opacity="0.45">SYS:OK</text>
-    <text x="1118" y="8" font-family="'SF Mono',monospace" font-size="7" fill="#a855f7" opacity="0.45" text-anchor="end">23 RULES</text>
-    <text x="14" y="258" font-family="'SF Mono',monospace" font-size="7" fill="#00d4ff" opacity="0.45">v1.1.0</text>
-    <text x="1118" y="258" font-family="'SF Mono',monospace" font-size="7" fill="#a855f7" opacity="0.45" text-anchor="end">MIT</text>
+    <!-- Corner HUD brackets -->
+    <polyline points="32,10 10,10 10,32" fill="none" stroke="#0550ae" stroke-width="1.5">
+      <animate attributeName="opacity" values="0.2;0.6;0.2" dur="4s" repeatCount="indefinite"/>
+    </polyline>
+    <polyline points="1168,10 1190,10 1190,32" fill="none" stroke="#6e40c9" stroke-width="1.5">
+      <animate attributeName="opacity" values="0.2;0.6;0.2" dur="4s" begin="2s" repeatCount="indefinite"/>
+    </polyline>
+    <polyline points="32,250 10,250 10,228" fill="none" stroke="#0550ae" stroke-width="1.5">
+      <animate attributeName="opacity" values="0.2;0.6;0.2" dur="4s" begin="1s" repeatCount="indefinite"/>
+    </polyline>
+    <polyline points="1168,250 1190,250 1190,228" fill="none" stroke="#6e40c9" stroke-width="1.5">
+      <animate attributeName="opacity" values="0.2;0.6;0.2" dur="4s" begin="3s" repeatCount="indefinite"/>
+    </polyline>
+    <text x="14" y="8" font-family="'SF Mono',monospace" font-size="7" fill="#0550ae" opacity="0.5">SYS:OK</text>
+    <text x="1118" y="8" font-family="'SF Mono',monospace" font-size="7" fill="#6e40c9" opacity="0.5" text-anchor="end">23 RULES</text>
+    <text x="14" y="258" font-family="'SF Mono',monospace" font-size="7" fill="#0550ae" opacity="0.5">v1.1.0</text>
+    <text x="1118" y="258" font-family="'SF Mono',monospace" font-size="7" fill="#6e40c9" opacity="0.5" text-anchor="end">MIT</text>
 
-    <!-- ===== RUNE ZONE ===== -->
     <!-- Ambient glow -->
-    <ellipse cx="112" cy="130" rx="110" ry="75" fill="#00d4ff" opacity="0.04">
-      <animate attributeName="opacity" values="0.03;0.07;0.03" dur="4s" repeatCount="indefinite"/>
+    <ellipse cx="112" cy="130" rx="110" ry="75" fill="#0550ae" opacity="0.05">
+      <animate attributeName="opacity" values="0.04;0.08;0.04" dur="4s" repeatCount="indefinite"/>
     </ellipse>
 
     <!-- Floating particles -->
-    <circle cx="55" cy="185" r="1.2" fill="#00d4ff" opacity="0">
+    <circle cx="55" cy="185" r="1.2" fill="#0550ae" opacity="0">
       <animate attributeName="cy" values="185;45;185" dur="5.2s" repeatCount="indefinite"/>
-      <animate attributeName="opacity" values="0;0.7;0" dur="5.2s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;0.5;0" dur="5.2s" repeatCount="indefinite"/>
       <animate attributeName="cx" values="55;63;55" dur="5.2s" repeatCount="indefinite"/>
     </circle>
-    <circle cx="170" cy="205" r="0.8" fill="#a855f7" opacity="0">
+    <circle cx="170" cy="205" r="0.8" fill="#6e40c9" opacity="0">
       <animate attributeName="cy" values="205;55;205" dur="4.1s" begin="1.3s" repeatCount="indefinite"/>
-      <animate attributeName="opacity" values="0;0.5;0" dur="4.1s" begin="1.3s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;0.4;0" dur="4.1s" begin="1.3s" repeatCount="indefinite"/>
     </circle>
-    <circle cx="82" cy="215" r="1" fill="#00d4ff" opacity="0">
+    <circle cx="82" cy="215" r="1" fill="#0550ae" opacity="0">
       <animate attributeName="cy" values="215;70;215" dur="6.3s" begin="0.7s" repeatCount="indefinite"/>
-      <animate attributeName="opacity" values="0;0.55;0" dur="6.3s" begin="0.7s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;0.45;0" dur="6.3s" begin="0.7s" repeatCount="indefinite"/>
     </circle>
-    <circle cx="148" cy="195" r="0.7" fill="#56d364" opacity="0">
+    <circle cx="148" cy="195" r="0.7" fill="#1a7f37" opacity="0">
       <animate attributeName="cy" values="195;80;195" dur="3.9s" begin="2.1s" repeatCount="indefinite"/>
-      <animate attributeName="opacity" values="0;0.4;0" dur="3.9s" begin="2.1s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;0.3;0" dur="3.9s" begin="2.1s" repeatCount="indefinite"/>
     </circle>
-    <circle cx="97" cy="220" r="0.9" fill="#a855f7" opacity="0">
+    <circle cx="97" cy="220" r="0.9" fill="#6e40c9" opacity="0">
       <animate attributeName="cy" values="220;65;220" dur="5.8s" begin="3.4s" repeatCount="indefinite"/>
-      <animate attributeName="opacity" values="0;0.45;0" dur="5.8s" begin="3.4s" repeatCount="indefinite"/>
-    </circle>
-    <circle cx="133" cy="210" r="0.6" fill="#00d4ff" opacity="0">
-      <animate attributeName="cy" values="210;88;210" dur="4.7s" begin="1.8s" repeatCount="indefinite"/>
-      <animate attributeName="opacity" values="0;0.4;0" dur="4.7s" begin="1.8s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;0.35;0" dur="5.8s" begin="3.4s" repeatCount="indefinite"/>
     </circle>
 
-    <!-- Rune wide glow (pulsing, cyan) -->
-    <text x="112" y="172" font-family="serif" font-size="150" text-anchor="middle" fill="#00d4ff" filter="url(#gWide)">&#x16B2;
-      <animate attributeName="opacity" values="0.28;0.48;0.28" dur="3.5s" repeatCount="indefinite"/>
+    <!-- Rune wide glow -->
+    <text x="112" y="172" font-family="serif" font-size="150" text-anchor="middle" fill="#0550ae" filter="url(#gWide)">&#x16B2;
+      <animate attributeName="opacity" values="0.2;0.38;0.2" dur="3.5s" repeatCount="indefinite"/>
     </text>
-    <!-- Rune tight glow (pulsing, brighter cyan) -->
-    <text x="112" y="172" font-family="serif" font-size="150" text-anchor="middle" fill="#5ae4ff" filter="url(#gTight)">&#x16B2;
-      <animate attributeName="opacity" values="0.35;0.55;0.35" dur="3.5s" repeatCount="indefinite"/>
+    <!-- Rune tight glow -->
+    <text x="112" y="172" font-family="serif" font-size="150" text-anchor="middle" fill="#1e6ff1" filter="url(#gTight)">&#x16B2;
+      <animate attributeName="opacity" values="0.28;0.45;0.28" dur="3.5s" repeatCount="indefinite"/>
     </text>
-    <!-- Rune shimmer layer (turbulence displacement) -->
-    <text x="112" y="172" font-family="serif" font-size="150" text-anchor="middle" fill="#00d4ff" filter="url(#runeF)">&#x16B2;
-      <animate attributeName="opacity" values="0.08;0.18;0.08" dur="3.5s" repeatCount="indefinite"/>
+    <!-- Rune shimmer -->
+    <text x="112" y="172" font-family="serif" font-size="150" text-anchor="middle" fill="#0550ae" filter="url(#runeF)">&#x16B2;
+      <animate attributeName="opacity" values="0.06;0.14;0.06" dur="3.5s" repeatCount="indefinite"/>
     </text>
-    <!-- Rune main crisp -->
-    <text x="112" y="172" font-family="serif" font-size="150" text-anchor="middle" fill="#cce8ff" opacity="0.86">&#x16B2;</text>
+    <!-- Rune main -->
+    <text x="112" y="172" font-family="serif" font-size="150" text-anchor="middle" fill="#1a365d" opacity="0.82">&#x16B2;</text>
 
-    <!-- Divider -->
     <rect x="215" y="28" width="1" height="204" fill="url(#divider)"/>
 
-    <!-- ===== KENAZ — native SVG text with Cinzel ===== -->
-    <!-- Outline trace (animates in first, then fades) -->
+    <!-- KENAZ outline trace -->
     <text x="237" y="138" font-family="Cinzel,serif" font-size="100" font-weight="900" letter-spacing="6"
-      fill="none" stroke="#00d4ff" stroke-width="0.8" opacity="0">KENAZ
-      <animate attributeName="opacity" values="0;0.5;0.5;0" dur="1.8s" fill="freeze"/>
+      fill="none" stroke="#0550ae" stroke-width="0.8" opacity="0">KENAZ
+      <animate attributeName="opacity" values="0;0.4;0.4;0" dur="1.8s" fill="freeze"/>
       <animate attributeName="stroke-dasharray" values="0 3000;3000 0" dur="1.8s" fill="freeze"/>
     </text>
-    <!-- Wide cyan glow layer -->
+    <!-- KENAZ wide glow -->
     <text x="237" y="138" font-family="Cinzel,serif" font-size="100" font-weight="900" letter-spacing="6"
-      fill="#00d4ff" filter="url(#gWide)" opacity="0">KENAZ
-      <animate attributeName="opacity" from="0" to="0.42" begin="1.2s" dur="0.6s" fill="freeze"/>
+      fill="#0550ae" filter="url(#gWide)" opacity="0">KENAZ
+      <animate attributeName="opacity" from="0" to="0.25" begin="1.2s" dur="0.6s" fill="freeze"/>
       <animateTransform attributeName="transform" type="translate" values="0,3;0,0" begin="1.2s" dur="0.6s" fill="freeze" additive="sum"/>
     </text>
-    <!-- Tight cyan glow layer -->
+    <!-- KENAZ tight glow -->
     <text x="237" y="138" font-family="Cinzel,serif" font-size="100" font-weight="900" letter-spacing="6"
-      fill="#5ae4ff" filter="url(#gTight)" opacity="0">KENAZ
-      <animate attributeName="opacity" from="0" to="0.28" begin="1.2s" dur="0.6s" fill="freeze"/>
+      fill="#1e6ff1" filter="url(#gTight)" opacity="0">KENAZ
+      <animate attributeName="opacity" from="0" to="0.18" begin="1.2s" dur="0.6s" fill="freeze"/>
       <animateTransform attributeName="transform" type="translate" values="0,3;0,0" begin="1.2s" dur="0.6s" fill="freeze" additive="sum"/>
     </text>
-    <!-- Solid white fill -->
+    <!-- KENAZ solid dark -->
     <text x="237" y="138" font-family="Cinzel,serif" font-size="100" font-weight="900" letter-spacing="6"
-      fill="#eaf4ff" opacity="0">KENAZ
-      <animate attributeName="opacity" from="0" to="0.97" begin="1.2s" dur="0.6s" fill="freeze"/>
+      fill="#0d1117" opacity="0">KENAZ
+      <animate attributeName="opacity" from="0" to="0.95" begin="1.2s" dur="0.6s" fill="freeze"/>
       <animateTransform attributeName="transform" type="translate" values="0,3;0,0" begin="1.2s" dur="0.6s" fill="freeze" additive="sum"/>
     </text>
-    <!-- Glitch layer (pure SVG, loops every 8s) -->
+    <!-- KENAZ glitch -->
     <text x="237" y="138" font-family="Cinzel,serif" font-size="100" font-weight="900" letter-spacing="6"
-      fill="#00d4ff" opacity="0">KENAZ
-      <animate attributeName="opacity" values="0;0;0.35;0;0.2;0;0" dur="8s" repeatCount="indefinite"
+      fill="#0550ae" opacity="0">KENAZ
+      <animate attributeName="opacity" values="0;0;0.25;0;0.15;0;0" dur="8s" repeatCount="indefinite"
                keyTimes="0;0.855;0.86;0.865;0.875;0.88;1"/>
       <animateTransform attributeName="transform" type="translate"
         values="0,0;0,0;-3,0;3,0;-1,0;0,0;0,0" dur="8s" repeatCount="indefinite"
@@ -188,13 +162,13 @@
     </text>
 
     <!-- Subtitle -->
-    <text x="237" y="160" font-family="'SF Mono','Fira Code',monospace" font-size="11" letter-spacing="4.5" fill="#00d4ff" opacity="0">
+    <text x="237" y="160" font-family="'SF Mono','Fira Code',monospace" font-size="11" letter-spacing="4.5" fill="#0550ae" opacity="0">
       23 detection rules &#160;&#183;&#160; OWASP mapped &#160;&#183;&#160; 100% offline
-      <animate attributeName="opacity" from="0" to="0.8" begin="1.8s" dur="0.5s" fill="freeze"/>
+      <animate attributeName="opacity" from="0" to="0.75" begin="1.8s" dur="0.5s" fill="freeze"/>
     </text>
 
     <!-- Tagline -->
-    <text x="237" y="183" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif" font-size="15" fill="#8b949e" opacity="0">
+    <text x="237" y="183" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif" font-size="15" fill="#57606a" opacity="0">
       Security auditor for Claude Code plugins &amp; MCP servers
       <animate attributeName="opacity" from="0" to="1" begin="2.1s" dur="0.4s" fill="freeze"/>
     </text>
@@ -202,95 +176,88 @@
     <!-- Scan bar -->
     <g opacity="0">
       <animate attributeName="opacity" from="0" to="1" begin="2.3s" dur="0.3s" fill="freeze"/>
-      <text x="237" y="204" font-family="'SF Mono',monospace" font-size="8.5" letter-spacing="2" fill="#00d4ff" opacity="0.4">
+      <text x="237" y="204" font-family="'SF Mono',monospace" font-size="8.5" letter-spacing="2" fill="#0550ae" opacity="0.45">
         SCANNING THREAT DATABASE &#160;&#183;&#160; 23 RULES
       </text>
-      <rect x="237" y="210" width="300" height="5" rx="2.5" fill="rgba(0,212,255,0.07)" stroke="rgba(0,212,255,0.12)" stroke-width="1"/>
+      <rect x="237" y="210" width="300" height="5" rx="2.5" fill="rgba(5,80,174,0.07)" stroke="rgba(5,80,174,0.15)" stroke-width="1"/>
       <rect x="237" y="210" width="0" height="5" rx="2.5">
         <animate attributeName="width" values="0;264;264;300;0" dur="5s" begin="2.3s" repeatCount="indefinite"/>
-        <animate attributeName="fill" values="#00d4ff;#00d4ff;#a855f7;#a855f7;#00d4ff" dur="5s" begin="2.3s" repeatCount="indefinite"/>
+        <animate attributeName="fill" values="#0550ae;#0550ae;#6e40c9;#6e40c9;#0550ae" dur="5s" begin="2.3s" repeatCount="indefinite"/>
       </rect>
     </g>
 
-    <!-- Badges -->
+    <!-- Badges — monochromatic blue palette -->
     <g font-family="'SF Mono','Fira Code',monospace" font-size="10.5" font-weight="600" opacity="0">
       <animate attributeName="opacity" from="0" to="1" begin="2.5s" dur="0.4s" fill="freeze"/>
-      <!-- v1.1.0 -->
-      <rect x="237" y="224" width="50" height="22" rx="4" fill="rgba(0,212,255,0.07)" stroke="rgba(0,212,255,0.22)" stroke-width="1"/>
-      <text x="262" y="239" fill="#79c0ff" text-anchor="middle">v1.1.0</text>
-      <!-- MIT -->
-      <rect x="294" y="224" width="38" height="22" rx="4" fill="rgba(0,212,255,0.07)" stroke="rgba(0,212,255,0.22)" stroke-width="1"/>
-      <text x="313" y="239" fill="#79c0ff" text-anchor="middle">MIT</text>
-      <!-- 99 tests -->
-      <rect x="339" y="224" width="72" height="22" rx="4" fill="rgba(0,212,255,0.07)" stroke="rgba(0,212,255,0.22)" stroke-width="1"/>
-      <text x="375" y="239" fill="#79c0ff" text-anchor="middle">99 tests &#x2713;</text>
-      <!-- offline -->
-      <rect x="418" y="224" width="84" height="22" rx="4" fill="rgba(0,212,255,0.07)" stroke="rgba(0,212,255,0.22)" stroke-width="1"/>
-      <text x="460" y="239" fill="#79c0ff" text-anchor="middle">100% offline</text>
-      <!-- zero deps -->
-      <rect x="509" y="224" width="72" height="22" rx="4" fill="rgba(168,85,247,0.07)" stroke="rgba(168,85,247,0.22)" stroke-width="1"/>
-      <text x="545" y="239" fill="#d2a8ff" text-anchor="middle">zero deps</text>
-      <!-- OWASP -->
-      <rect x="588" y="224" width="94" height="22" rx="4" fill="rgba(168,85,247,0.07)" stroke="rgba(168,85,247,0.22)" stroke-width="1"/>
-      <text x="635" y="239" fill="#d2a8ff" text-anchor="middle">OWASP Top 10</text>
+      <rect x="237" y="224" width="50" height="22" rx="4" fill="rgba(5,80,174,0.06)" stroke="rgba(5,80,174,0.25)" stroke-width="1"/>
+      <text x="262" y="239" fill="#0550ae" text-anchor="middle">v1.1.0</text>
+      <rect x="294" y="224" width="38" height="22" rx="4" fill="rgba(5,80,174,0.06)" stroke="rgba(5,80,174,0.25)" stroke-width="1"/>
+      <text x="313" y="239" fill="#0550ae" text-anchor="middle">MIT</text>
+      <rect x="339" y="224" width="72" height="22" rx="4" fill="rgba(5,80,174,0.06)" stroke="rgba(5,80,174,0.25)" stroke-width="1"/>
+      <text x="375" y="239" fill="#0550ae" text-anchor="middle">99 tests &#x2713;</text>
+      <rect x="418" y="224" width="84" height="22" rx="4" fill="rgba(5,80,174,0.06)" stroke="rgba(5,80,174,0.25)" stroke-width="1"/>
+      <text x="460" y="239" fill="#0550ae" text-anchor="middle">100% offline</text>
+      <rect x="509" y="224" width="72" height="22" rx="4" fill="rgba(110,64,201,0.06)" stroke="rgba(110,64,201,0.25)" stroke-width="1"/>
+      <text x="545" y="239" fill="#6e40c9" text-anchor="middle">zero deps</text>
+      <rect x="588" y="224" width="94" height="22" rx="4" fill="rgba(110,64,201,0.06)" stroke="rgba(110,64,201,0.25)" stroke-width="1"/>
+      <text x="635" y="239" fill="#6e40c9" text-anchor="middle">OWASP Top 10</text>
     </g>
 
-    <!-- ===== TERMINAL PANEL ===== -->
-    <rect x="992" y="26" width="192" height="210" rx="8" fill="#010409" stroke="#1c2333" stroke-width="1"/>
-    <rect x="992" y="26" width="192" height="28" rx="8" fill="#0d1117"/>
-    <rect x="992" y="40" width="192" height="14" fill="#0d1117"/>
+    <!-- Terminal panel — stays dark on light bg -->
+    <rect x="992" y="26" width="192" height="210" rx="8" fill="#010409" stroke="#30363d" stroke-width="1"/>
+    <rect x="992" y="26" width="192" height="28" rx="8" fill="#161b22"/>
+    <rect x="992" y="40" width="192" height="14" fill="#161b22"/>
     <circle cx="1010" cy="40" r="5" fill="#ff5f57"/>
     <circle cx="1025" cy="40" r="5" fill="#febc2e"/>
     <circle cx="1040" cy="40" r="5" fill="#28c840"/>
-    <text x="1088" y="44.5" font-family="monospace" font-size="9" fill="#3d444d" text-anchor="middle">kenaz &#x2014; scan</text>
+    <text x="1088" y="44.5" font-family="monospace" font-size="9" fill="#484f58" text-anchor="middle">kenaz &#x2014; scan</text>
 
     <g font-family="'SF Mono','Fira Code',monospace" font-size="10">
-      <text x="1003" y="80" fill="#3d8ef0" opacity="0">$ /kenaz git-helper
+      <text x="1003" y="80" fill="#58a6ff" opacity="0">$ /kenaz git-helper
         <animate attributeName="opacity" from="0" to="1" begin="0.3s" dur="0.25s" fill="freeze"/>
       </text>
       <line x1="1003" y1="91" x2="1003" y2="91" stroke="#30363d" stroke-width="0.6" opacity="0">
         <animate attributeName="x2" from="1003" to="1178" begin="0.9s" dur="0.4s" fill="freeze"/>
         <animate attributeName="opacity" from="0" to="1" begin="0.9s" dur="0.1s" fill="freeze"/>
       </line>
-      <text x="1003" y="104" fill="#484f58" opacity="0">
-        <tspan fill="#56d364">&#x2713;</tspan><tspan> PA-001  exfiltration</tspan>
+      <text x="1003" y="104" fill="#8b949e" opacity="0">
+        <tspan fill="#3fb950">&#x2713;</tspan><tspan> PA-001  exfiltration</tspan>
         <animate attributeName="opacity" from="0" to="1" begin="1.4s" dur="0.2s" fill="freeze"/>
       </text>
-      <text x="1003" y="120" fill="#484f58" opacity="0">
-        <tspan fill="#56d364">&#x2713;</tspan><tspan> PA-004  secret-read</tspan>
+      <text x="1003" y="120" fill="#8b949e" opacity="0">
+        <tspan fill="#3fb950">&#x2713;</tspan><tspan> PA-004  secret-read</tspan>
         <animate attributeName="opacity" from="0" to="1" begin="1.9s" dur="0.2s" fill="freeze"/>
       </text>
-      <text x="1003" y="136" fill="#484f58" opacity="0">
-        <tspan fill="#e3b341">&#x26A0;</tspan><tspan> PA-022  shell-inject</tspan>
+      <text x="1003" y="136" fill="#8b949e" opacity="0">
+        <tspan fill="#d29922">&#x26A0;</tspan><tspan> PA-022  shell-inject</tspan>
         <animate attributeName="opacity" from="0" to="1" begin="2.4s" dur="0.2s" fill="freeze"/>
       </text>
-      <text x="1003" y="152" fill="#484f58" opacity="0">
-        <tspan fill="#56d364">&#x2713;</tspan><tspan> PA-015  prompt-inject</tspan>
+      <text x="1003" y="152" fill="#8b949e" opacity="0">
+        <tspan fill="#3fb950">&#x2713;</tspan><tspan> PA-015  prompt-inject</tspan>
         <animate attributeName="opacity" from="0" to="1" begin="2.9s" dur="0.2s" fill="freeze"/>
       </text>
       <line x1="1003" y1="163" x2="1003" y2="163" stroke="#30363d" stroke-width="0.6" opacity="0">
         <animate attributeName="x2" from="1003" to="1178" begin="3.4s" dur="0.4s" fill="freeze"/>
         <animate attributeName="opacity" from="0" to="1" begin="3.4s" dur="0.1s" fill="freeze"/>
       </line>
-      <text x="1003" y="177" fill="#e3b341" font-weight="bold" opacity="0">verdict: REVIEW  88/100
+      <text x="1003" y="177" fill="#d29922" font-weight="bold" opacity="0">verdict: REVIEW  88/100
         <animate attributeName="opacity" from="0" to="1" begin="3.9s" dur="0.2s" fill="freeze"/>
       </text>
-      <text x="1003" y="193" fill="#30363d" opacity="0">sha256: a3f7c2&#x2026;
+      <text x="1003" y="193" fill="#484f58" opacity="0">sha256: a3f7c2&#x2026;
         <animate attributeName="opacity" from="0" to="1" begin="4.4s" dur="0.2s" fill="freeze"/>
       </text>
-      <text x="1085" y="193" fill="#00d4ff" opacity="0">&#x258B;
+      <text x="1085" y="193" fill="#1ae8ff" opacity="0">&#x258B;
         <animate attributeName="opacity" from="0" to="1" begin="4.5s" dur="0.1s" fill="freeze"/>
         <animate attributeName="opacity" values="1;0;1;0" dur="0.9s" begin="4.6s" repeatCount="indefinite"/>
       </text>
     </g>
 
-    <!-- Terminal scan sweep -->
-    <rect x="992" y="62" width="192" height="1" fill="#00d4ff" opacity="0">
+    <rect x="992" y="62" width="192" height="1" fill="#0550ae" opacity="0">
       <animate attributeName="y" values="62;234;62" dur="7s" repeatCount="indefinite"/>
-      <animate attributeName="opacity" values="0;0.18;0;0" dur="7s" repeatCount="indefinite" keyTimes="0;0.25;0.6;1"/>
+      <animate attributeName="opacity" values="0;0.15;0;0" dur="7s" repeatCount="indefinite" keyTimes="0;0.25;0.6;1"/>
     </rect>
 
-    <rect y="258" width="1200" height="2" fill="url(#accent)" opacity="0.45"/>
-    <rect width="1200" height="260" fill="none" stroke="#1c2333" stroke-width="1.5" rx="14"/>
+    <rect y="258" width="1200" height="2" fill="url(#accent)" opacity="0.5"/>
+    <rect width="1200" height="260" fill="none" stroke="#d0d7de" stroke-width="1.5" rx="14"/>
   </g>
 </svg>

@@ -1,5 +1,8 @@
 <div align="center">
-  <img src="assets/banner.svg" alt="Kenaz — Security auditor for Claude Code plugins & MCP servers" width="100%" />
+  <picture>
+    <source media="(prefers-color-scheme: light)" srcset="assets/banner-light.svg">
+    <img src="assets/banner.svg" alt="Kenaz — Security auditor for Claude Code plugins & MCP servers" width="100%" />
+  </picture>
 </div>
 
 <div align="center">
