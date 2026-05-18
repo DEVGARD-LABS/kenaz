@@ -196,7 +196,7 @@
       <rect x="237" y="210" width="0" height="5" rx="2.5">
         <animate attributeName="width" values="0;660;660;748;0" dur="5s" begin="2.3s" repeatCount="indefinite"/>
         <animate attributeName="fill" values="#0550ae;#0550ae;#6e40c9;#6e40c9;#0550ae" dur="5s" begin="2.3s" repeatCount="indefinite"/>
-        <animate attributeName="opacity" values="1;1;1;1;0;0" keyTimes="0;0.44;0.68;0.84;0.97;1" dur="5s" begin="2.3s" repeatCount="indefinite" calcMode="linear"/>
+        <animate attributeName="opacity" values="1;1;0;0" keyTimes="0;0.65;0.73;1" dur="5s" begin="2.3s" repeatCount="indefinite" calcMode="linear"/>
       </rect>
       <!-- Laser edge: outer glow -->
       <line x1="237" y1="205" x2="237" y2="220" stroke="#0550ae" stroke-width="6" opacity="0">

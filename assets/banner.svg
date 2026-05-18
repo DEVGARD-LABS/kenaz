@@ -228,7 +228,7 @@
       <rect x="237" y="210" width="0" height="5" rx="2.5">
         <animate attributeName="width" values="0;660;660;748;0" dur="5s" begin="2.3s" repeatCount="indefinite"/>
         <animate attributeName="fill" values="#00d4ff;#00d4ff;#a855f7;#a855f7;#00d4ff" dur="5s" begin="2.3s" repeatCount="indefinite"/>
-        <animate attributeName="opacity" values="1;1;1;1;0;0" keyTimes="0;0.44;0.68;0.84;0.97;1" dur="5s" begin="2.3s" repeatCount="indefinite" calcMode="linear"/>
+        <animate attributeName="opacity" values="1;1;0;0" keyTimes="0;0.65;0.73;1" dur="5s" begin="2.3s" repeatCount="indefinite" calcMode="linear"/>
       </rect>
       <!-- Laser edge: outer glow -->
       <line x1="237" y1="205" x2="237" y2="220" stroke="#5ae4ff" stroke-width="6" opacity="0">
