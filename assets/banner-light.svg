@@ -35,6 +35,11 @@
     <filter id="gTight" x="-12%" y="-45%" width="124%" height="190%">
       <feGaussianBlur stdDeviation="5"/>
     </filter>
+    <linearGradient id="titleGrad" x1="237" y1="0" x2="650" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" style="stop-color:#0550ae"/>
+      <stop offset="55%" style="stop-color:#0d1117"/>
+      <stop offset="100%" style="stop-color:#0d1117"/>
+    </linearGradient>
     <clipPath id="clip"><rect width="1200" height="260" rx="14"/></clipPath>
   </defs>
 
@@ -101,7 +106,7 @@
       <animate attributeName="cy" values="215;70;215" dur="6.3s" begin="0.7s" repeatCount="indefinite"/>
       <animate attributeName="opacity" values="0;0.45;0" dur="6.3s" begin="0.7s" repeatCount="indefinite"/>
     </circle>
-    <circle cx="148" cy="195" r="0.7" fill="#1a7f37" opacity="0">
+    <circle cx="148" cy="195" r="0.7" fill="#6e40c9" opacity="0">
       <animate attributeName="cy" values="195;80;195" dur="3.9s" begin="2.1s" repeatCount="indefinite"/>
       <animate attributeName="opacity" values="0;0.3;0" dur="3.9s" begin="2.1s" repeatCount="indefinite"/>
     </circle>
@@ -147,7 +152,7 @@
     </text>
     <!-- KENAZ solid dark -->
     <text x="237" y="138" font-family="Cinzel,serif" font-size="100" font-weight="900" letter-spacing="6"
-      fill="#0d1117" opacity="0">KENAZ
+      fill="url(#titleGrad)" opacity="0">KENAZ
       <animate attributeName="opacity" from="0" to="0.95" begin="1.2s" dur="0.6s" fill="freeze"/>
       <animateTransform attributeName="transform" type="translate" values="0,3;0,0" begin="1.2s" dur="0.6s" fill="freeze" additive="sum"/>
     </text>
@@ -168,7 +173,7 @@
     </text>
 
     <!-- Tagline -->
-    <text x="237" y="183" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif" font-size="15" fill="#57606a" opacity="0">
+    <text x="237" y="183" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif" font-size="16" fill="#424a53" opacity="0">
       Security auditor for Claude Code plugins &amp; MCP servers
       <animate attributeName="opacity" from="0" to="1" begin="2.1s" dur="0.4s" fill="freeze"/>
     </text>
@@ -179,9 +184,9 @@
       <text x="237" y="204" font-family="'SF Mono',monospace" font-size="8.5" letter-spacing="2" fill="#0550ae" opacity="0.45">
         SCANNING THREAT DATABASE &#160;&#183;&#160; 23 RULES
       </text>
-      <rect x="237" y="210" width="300" height="5" rx="2.5" fill="rgba(5,80,174,0.07)" stroke="rgba(5,80,174,0.15)" stroke-width="1"/>
+      <rect x="237" y="210" width="748" height="5" rx="2.5" fill="rgba(5,80,174,0.07)" stroke="rgba(5,80,174,0.15)" stroke-width="1"/>
       <rect x="237" y="210" width="0" height="5" rx="2.5">
-        <animate attributeName="width" values="0;264;264;300;0" dur="5s" begin="2.3s" repeatCount="indefinite"/>
+        <animate attributeName="width" values="0;660;660;748;0" dur="5s" begin="2.3s" repeatCount="indefinite"/>
         <animate attributeName="fill" values="#0550ae;#0550ae;#6e40c9;#6e40c9;#0550ae" dur="5s" begin="2.3s" repeatCount="indefinite"/>
       </rect>
     </g>
@@ -201,6 +206,12 @@
       <text x="545" y="239" fill="#6e40c9" text-anchor="middle">zero deps</text>
       <rect x="588" y="224" width="94" height="22" rx="4" fill="rgba(110,64,201,0.06)" stroke="rgba(110,64,201,0.25)" stroke-width="1"/>
       <text x="635" y="239" fill="#6e40c9" text-anchor="middle">OWASP Top 10</text>
+      <!-- SARIF -->
+      <rect x="692" y="224" width="52" height="22" rx="4" fill="rgba(110,64,201,0.06)" stroke="rgba(110,64,201,0.25)" stroke-width="1"/>
+      <text x="718" y="239" fill="#6e40c9" text-anchor="middle">SARIF</text>
+      <!-- CI ready -->
+      <rect x="751" y="224" width="70" height="22" rx="4" fill="rgba(5,80,174,0.06)" stroke="rgba(5,80,174,0.25)" stroke-width="1"/>
+      <text x="786" y="239" fill="#0550ae" text-anchor="middle">CI ready</text>
     </g>
 
     <!-- Terminal panel — stays dark on light bg -->
