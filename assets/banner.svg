@@ -1,69 +1,128 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 220" width="900" height="220">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 260" width="1200" height="260">
   <defs>
     <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#0d1117"/>
-      <stop offset="100%" style="stop-color:#161b22"/>
+      <stop offset="0%" style="stop-color:#0a0e1a"/>
+      <stop offset="60%" style="stop-color:#0d1117"/>
+      <stop offset="100%" style="stop-color:#111827"/>
     </linearGradient>
-    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" style="stop-color:#3d8ef0"/>
+    <linearGradient id="runeGlow" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#6ab4ff"/>
       <stop offset="100%" style="stop-color:#a259f7"/>
     </linearGradient>
-    <filter id="glow">
-      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
-      <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    <linearGradient id="topLine" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#3d8ef0;stop-opacity:0"/>
+      <stop offset="30%" style="stop-color:#3d8ef0"/>
+      <stop offset="70%" style="stop-color:#a259f7"/>
+      <stop offset="100%" style="stop-color:#a259f7;stop-opacity:0"/>
+    </linearGradient>
+    <linearGradient id="divider" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#3d8ef0;stop-opacity:0"/>
+      <stop offset="50%" style="stop-color:#3d8ef0;stop-opacity:0.6"/>
+      <stop offset="100%" style="stop-color:#a259f7;stop-opacity:0"/>
+    </linearGradient>
+    <filter id="runeBlur">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
     </filter>
+    <filter id="softGlow">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <clipPath id="clip"><rect width="1200" height="260" rx="14"/></clipPath>
   </defs>
 
-  <!-- Background -->
-  <rect width="900" height="220" fill="url(#bg)" rx="12"/>
+  <g clip-path="url(#clip)">
+    <!-- Background -->
+    <rect width="1200" height="260" fill="url(#bg)"/>
 
-  <!-- Border -->
-  <rect width="900" height="220" fill="none" stroke="#21262d" stroke-width="1.5" rx="12"/>
+    <!-- Subtle grid -->
+    <g opacity="0.04" stroke="#6ab4ff" stroke-width="0.5">
+      <line x1="0" y1="40" x2="1200" y2="40"/>
+      <line x1="0" y1="80" x2="1200" y2="80"/>
+      <line x1="0" y1="120" x2="1200" y2="120"/>
+      <line x1="0" y1="160" x2="1200" y2="160"/>
+      <line x1="0" y1="200" x2="1200" y2="200"/>
+      <line x1="0" y1="240" x2="1200" y2="240"/>
+      <line x1="120" y1="0" x2="120" y2="260"/>
+      <line x1="240" y1="0" x2="240" y2="260"/>
+      <line x1="360" y1="0" x2="360" y2="260"/>
+      <line x1="480" y1="0" x2="480" y2="260"/>
+      <line x1="600" y1="0" x2="600" y2="260"/>
+      <line x1="720" y1="0" x2="720" y2="260"/>
+      <line x1="840" y1="0" x2="840" y2="260"/>
+      <line x1="960" y1="0" x2="960" y2="260"/>
+      <line x1="1080" y1="0" x2="1080" y2="260"/>
+    </g>
 
-  <!-- Top accent line -->
-  <rect x="0" y="0" width="900" height="2" fill="url(#accent)" rx="1"/>
+    <!-- Ambient glow left -->
+    <ellipse cx="160" cy="130" rx="180" ry="120" fill="#3d8ef0" opacity="0.04"/>
+    <!-- Ambient glow right -->
+    <ellipse cx="1050" cy="130" rx="200" ry="100" fill="#a259f7" opacity="0.04"/>
 
-  <!-- Rune glyph -->
-  <text x="72" y="130" font-family="serif" font-size="88" fill="#3d8ef0" filter="url(#glow)" text-anchor="middle" opacity="0.95">ᚲ</text>
+    <!-- Top accent line -->
+    <rect x="0" y="0" width="1200" height="2.5" fill="url(#topLine)"/>
 
-  <!-- Vertical divider -->
-  <line x1="118" y1="48" x2="118" y2="172" stroke="#21262d" stroke-width="1.5"/>
+    <!-- Rune — background glow -->
+    <text x="130" y="168" font-family="serif" font-size="130" fill="#3d8ef0" opacity="0.15" text-anchor="middle">ᚲ</text>
+    <!-- Rune — main -->
+    <text x="130" y="168" font-family="serif" font-size="130" fill="url(#runeGlow)" filter="url(#runeBlur)" text-anchor="middle" opacity="0.9">ᚲ</text>
 
-  <!-- Product name -->
-  <text x="148" y="105" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="52" font-weight="700" fill="#f0f6fc" letter-spacing="-1">KENAZ</text>
+    <!-- Vertical divider -->
+    <rect x="218" y="40" width="1.5" height="180" fill="url(#divider)"/>
 
-  <!-- Tagline -->
-  <text x="150" y="145" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="17" fill="#8b949e" letter-spacing="0.2">Security auditor for Claude Code plugins &amp; MCP servers</text>
+    <!-- Product name -->
+    <text x="246" y="128" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="68" font-weight="800" fill="#f0f6fc" letter-spacing="-2" filter="url(#softGlow)">KENAZ</text>
 
-  <!-- Badges row -->
-  <!-- v1.1.0 -->
-  <rect x="150" y="165" width="68" height="22" rx="4" fill="#1f3a5f"/>
-  <text x="184" y="180" font-family="monospace" font-size="11" fill="#79c0ff" text-anchor="middle">v1.1.0</text>
+    <!-- Rune label under name -->
+    <text x="248" y="154" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="14" fill="#a259f7" letter-spacing="3" font-weight="500">ᚲ  FUTHARK · KNOWLEDGE · TORCH</text>
 
-  <!-- MIT -->
-  <rect x="226" y="165" width="46" height="22" rx="4" fill="#1a3a1a"/>
-  <text x="249" y="180" font-family="monospace" font-size="11" fill="#56d364" text-anchor="middle">MIT</text>
+    <!-- Tagline -->
+    <text x="248" y="190" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="18" fill="#8b949e" letter-spacing="0.3">Security auditor for Claude Code plugins &amp; MCP servers</text>
 
-  <!-- 99 tests -->
-  <rect x="280" y="165" width="84" height="22" rx="4" fill="#1a3a1a"/>
-  <text x="322" y="180" font-family="monospace" font-size="11" fill="#56d364" text-anchor="middle">99 tests ✓</text>
+    <!-- Badges row -->
+    <!-- v1.1.0 -->
+    <rect x="248" y="212" width="72" height="24" rx="5" fill="#0d2340" stroke="#1d4a7a" stroke-width="1"/>
+    <text x="284" y="228" font-family="'SF Mono', 'Fira Code', monospace" font-size="11.5" fill="#79c0ff" text-anchor="middle" font-weight="600">v1.1.0</text>
+    <!-- MIT -->
+    <rect x="328" y="212" width="52" height="24" rx="5" fill="#0d2a0d" stroke="#1a4a1a" stroke-width="1"/>
+    <text x="354" y="228" font-family="'SF Mono', 'Fira Code', monospace" font-size="11.5" fill="#56d364" text-anchor="middle" font-weight="600">MIT</text>
+    <!-- 99 tests -->
+    <rect x="388" y="212" width="90" height="24" rx="5" fill="#0d2a0d" stroke="#1a4a1a" stroke-width="1"/>
+    <text x="433" y="228" font-family="'SF Mono', 'Fira Code', monospace" font-size="11.5" fill="#56d364" text-anchor="middle" font-weight="600">99 tests ✓</text>
+    <!-- offline -->
+    <rect x="486" y="212" width="102" height="24" rx="5" fill="#0d2340" stroke="#1d4a7a" stroke-width="1"/>
+    <text x="537" y="228" font-family="'SF Mono', 'Fira Code', monospace" font-size="11.5" fill="#79c0ff" text-anchor="middle" font-weight="600">100% offline</text>
+    <!-- zero deps -->
+    <rect x="596" y="212" width="88" height="24" rx="5" fill="#1a0d2a" stroke="#3a1a5a" stroke-width="1"/>
+    <text x="640" y="228" font-family="'SF Mono', 'Fira Code', monospace" font-size="11.5" fill="#d2a8ff" text-anchor="middle" font-weight="600">zero deps</text>
+    <!-- OWASP -->
+    <rect x="692" y="212" width="116" height="24" rx="5" fill="#2a1a0d" stroke="#5a3a1a" stroke-width="1"/>
+    <text x="750" y="228" font-family="'SF Mono', 'Fira Code', monospace" font-size="11.5" fill="#e3b341" text-anchor="middle" font-weight="600">OWASP Top 10</text>
 
-  <!-- offline -->
-  <rect x="372" y="165" width="80" height="22" rx="4" fill="#1f3a5f"/>
-  <text x="412" y="180" font-family="monospace" font-size="11" fill="#79c0ff" text-anchor="middle">100% offline</text>
+    <!-- Terminal panel right -->
+    <rect x="870" y="32" width="310" height="196" rx="8" fill="#010409" stroke="#21262d" stroke-width="1" opacity="0.95"/>
+    <!-- Terminal header -->
+    <rect x="870" y="32" width="310" height="28" rx="8" fill="#161b22" opacity="0.95"/>
+    <rect x="870" y="46" width="310" height="14" fill="#161b22"/>
+    <circle cx="890" cy="46" r="5" fill="#ff5f57"/>
+    <circle cx="906" cy="46" r="5" fill="#febc2e"/>
+    <circle cx="922" cy="46" r="5" fill="#28c840"/>
+    <text x="1025" y="51" font-family="monospace" font-size="10" fill="#484f58" text-anchor="middle">kenaz — terminal</text>
+    <!-- Terminal content -->
+    <text x="886" y="82" font-family="'SF Mono','Fira Code',monospace" font-size="11" fill="#3d8ef0">$ /kenaz git-helper</text>
+    <text x="886" y="100" font-family="'SF Mono','Fira Code',monospace" font-size="10.5" fill="#484f58">─────────────────────────────</text>
+    <text x="886" y="116" font-family="'SF Mono','Fira Code',monospace" font-size="10.5" fill="#56d364">✓ PA-001  exfiltration</text>
+    <text x="886" y="131" font-family="'SF Mono','Fira Code',monospace" font-size="10.5" fill="#56d364">✓ PA-004  secret-read</text>
+    <text x="886" y="146" font-family="'SF Mono','Fira Code',monospace" font-size="10.5" fill="#e3b341">⚠ PA-022  shell-inject  :47</text>
+    <text x="886" y="161" font-family="'SF Mono','Fira Code',monospace" font-size="10.5" fill="#56d364">✓ PA-015  prompt-inject</text>
+    <text x="886" y="176" font-family="'SF Mono','Fira Code',monospace" font-size="10.5" fill="#484f58">─────────────────────────────</text>
+    <text x="886" y="192" font-family="'SF Mono','Fira Code',monospace" font-size="11" fill="#e3b341" font-weight="600">verdict: REVIEW  score: 88/100</text>
+    <text x="886" y="208" font-family="'SF Mono','Fira Code',monospace" font-size="10" fill="#484f58">cache saved · sha256: a3f7c2…</text>
 
-  <!-- zero deps -->
-  <rect x="460" y="165" width="76" height="22" rx="4" fill="#2d1a3a"/>
-  <text x="498" y="180" font-family="monospace" font-size="11" fill="#d2a8ff" text-anchor="middle">zero deps</text>
+    <!-- Bottom border -->
+    <rect x="0" y="257" width="1200" height="3" fill="url(#topLine)" opacity="0.4"/>
 
-  <!-- Decorative right side: terminal lines -->
-  <g opacity="0.18">
-    <text x="730" y="75" font-family="monospace" font-size="12" fill="#3d8ef0">/kenaz git-helper</text>
-    <text x="730" y="95" font-family="monospace" font-size="11" fill="#56d364">PA-001 exfiltration ........ PASS</text>
-    <text x="730" y="112" font-family="monospace" font-size="11" fill="#56d364">PA-015 prompt-inject ....... PASS</text>
-    <text x="730" y="129" font-family="monospace" font-size="11" fill="#e3b341">PA-022 shell-inject ........ WARN</text>
-    <text x="730" y="146" font-family="monospace" font-size="11" fill="#56d364">PA-004 secret-read ......... PASS</text>
-    <line x1="728" y1="157" x2="882" y2="157" stroke="#21262d" stroke-width="1"/>
-    <text x="730" y="172" font-family="monospace" font-size="12" fill="#e3b341">verdict: REVIEW  score: 88</text>
+    <!-- Outer border -->
+    <rect width="1200" height="260" fill="none" stroke="#21262d" stroke-width="1.5" rx="14"/>
   </g>
 </svg>
