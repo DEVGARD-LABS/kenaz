@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Rules catalog
+    url: https://github.com/DEVGARD-LABS/kenaz/blob/main/rules/PA-RULES.md
+    about: Check detection patterns and false-positive guidance before reporting
+  - name: Security vulnerability
+    url: https://github.com/DEVGARD-LABS/kenaz/blob/main/.github/SECURITY.md
+    about: Report security issues in Kenaz itself via our security policy
