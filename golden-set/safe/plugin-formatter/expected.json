@@ -1,0 +1,5 @@
+{
+  "verdict": "SAFE",
+  "expected_rules": [],
+  "notes": "Only .md with clear instructions. No executable code. No network or credential access. Declared tools: Read only."
+}

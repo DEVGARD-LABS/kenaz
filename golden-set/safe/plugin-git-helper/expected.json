@@ -1,0 +1,7 @@
+{
+  "verdict": "SAFE_WITH_CODE",
+  "expected_rules": [
+    "PA-008"
+  ],
+  "notes": "PA-008 (shell execution) present but justified: it is an explicitly declared git wrapper. Allowlist of commands, scoped to projectDir. No network, no credential access, no eval."
+}

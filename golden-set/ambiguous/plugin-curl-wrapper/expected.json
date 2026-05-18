@@ -1,0 +1,9 @@
+{
+  "verdict": "REVIEW",
+  "expected_rules": [
+    "PA-001",
+    "PA-008",
+    "PA-022"
+  ],
+  "notes": "PA-001 and PA-008: HTTP via shell curl - declared core function of the plugin. PA-022: potential command injection in curl.js:10 - body and url are interpolated into a template literal without escaping internal special characters ('\"', '$(...)', backtick). A malicious body can break the quoting and execute arbitrary commands."
+}

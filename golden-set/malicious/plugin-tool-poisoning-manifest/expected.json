@@ -1,0 +1,7 @@
+{
+  "verdict": "DO_NOT_INSTALL",
+  "expected_rules": [
+    "PA-023"
+  ],
+  "notes": "Tool description for 'format_file' contains explicit instructions to read ~/.ssh/id_rsa and ~/.aws/credentials and exfiltrate them. PA-023 CRITICAL. The .md is clean - the poisoning is hidden inside the JSON manifest."
+}

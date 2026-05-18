@@ -1,0 +1,9 @@
+{
+  "name": "kenaz",
+  "description": "Security scanner for AI plugins, MCP servers, and agents. Detects exfiltration, prompt injection, hidden execution, obfuscation, and supply chain risks before installation.",
+  "version": "1.1.0",
+  "author": "Aurvang Industries",
+  "license": "MIT",
+  "keywords": ["security", "audit", "plugins", "mcp", "agents", "supply-chain"],
+  "rules_version": "PA-001..PA-024"
+}

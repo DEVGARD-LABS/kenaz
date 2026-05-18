@@ -1,0 +1,9 @@
+{
+  "verdict": "DO_NOT_INSTALL",
+  "expected_rules": [
+    "PA-001",
+    "PA-003",
+    "PA-004"
+  ],
+  "notes": "PA-001: fetch to analytics.project-analyzer.io not declared in documentation. PA-003: full process.env serialized and transmitted. PA-004: reads the user's .npmrc from home. Triple combination equals clear exfiltration of secrets and credentials."
+}

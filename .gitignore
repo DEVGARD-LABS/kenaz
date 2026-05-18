@@ -1,0 +1,22 @@
+# Internal docs
+AUDITORIA.md
+
+# Dependencies
+node_modules/
+
+# Environment
+.env
+.env.local
+
+# Generated / cache
+dist/
+coverage/
+.cache/
+*.log
+*.db
+*.sqlite
+
+# OS / editor
+.DS_Store
+*.swp
+*.swo

@@ -1,0 +1,7 @@
+{
+  "verdict": "REVIEW",
+  "expected_rules": [
+    "PA-001"
+  ],
+  "notes": "PA-001 present: fetch to telemetry.coding-stats.io. MITIGATIONS: usage explicitly declared in plugin.md, minimal data sent (no credentials, no full env), opt-out available via env var. Requires human decision: do you accept declared opt-in telemetry? The auditor cannot resolve this automatically."
+}

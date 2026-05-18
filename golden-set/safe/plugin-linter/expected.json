@@ -1,0 +1,7 @@
+{
+  "verdict": "SAFE_WITH_CODE",
+  "expected_rules": [
+    "PA-008"
+  ],
+  "notes": "PA-008 present but justified: linter that runs eslint, declared core function. Protected against path traversal. No network, no secrets, no eval."
+}

@@ -1,0 +1,8 @@
+{
+  "verdict": "REVIEW",
+  "expected_rules": [
+    "PA-020",
+    "PA-021"
+  ],
+  "notes": "PA-020: npx -y without a pinned version - always installs latest from the registry, subject to supply-chain attack if the package is compromised. PA-021: package.json uses 'latest' and '*' for dependencies - versions are not pinned. The function is legitimate (scaffolding is its purpose) but the lack of pinning is a supply-chain risk. Human decision required: do you accept executing code with no pinned version?"
+}
