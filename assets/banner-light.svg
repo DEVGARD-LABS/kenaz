@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 260" width="1200" height="260">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 320" width="1200" height="320">
   <defs>
     <style>
       @font-face{font-family:'Cinzel';font-style:normal;font-weight:900;src:url('data:font/woff2;base64,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') format('woff2');}
@@ -47,33 +47,34 @@
       <feColorMatrix type="matrix" in="noise"
         values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0.04 0.04 0.04 0 0"/>
     </filter>
-    <clipPath id="clip"><rect width="1200" height="260" rx="14"/></clipPath>
+    <clipPath id="clip"><rect width="1200" height="320" rx="14"/></clipPath>
   </defs>
 
   <g clip-path="url(#clip)">
-    <rect width="1200" height="260" fill="url(#bg)"/>
-    <rect width="1200" height="260" filter="url(#grain)"/>
+    <rect width="1200" height="320" fill="url(#bg)"/>
+    <rect width="1200" height="320" filter="url(#grain)"/>
 
     <!-- Grid -->
     <g opacity="0.18" stroke="#d0d7de" stroke-width="0.5">
       <line x1="0" y1="40" x2="1200" y2="40"/><line x1="0" y1="80" x2="1200" y2="80"/>
       <line x1="0" y1="120" x2="1200" y2="120"/><line x1="0" y1="160" x2="1200" y2="160"/>
       <line x1="0" y1="200" x2="1200" y2="200"/><line x1="0" y1="240" x2="1200" y2="240"/>
-      <line x1="80" y1="0" x2="80" y2="260"/><line x1="160" y1="0" x2="160" y2="260"/>
-      <line x1="240" y1="0" x2="240" y2="260"/><line x1="320" y1="0" x2="320" y2="260"/>
-      <line x1="400" y1="0" x2="400" y2="260"/><line x1="480" y1="0" x2="480" y2="260"/>
-      <line x1="560" y1="0" x2="560" y2="260"/><line x1="640" y1="0" x2="640" y2="260"/>
-      <line x1="720" y1="0" x2="720" y2="260"/><line x1="800" y1="0" x2="800" y2="260"/>
-      <line x1="880" y1="0" x2="880" y2="260"/><line x1="960" y1="0" x2="960" y2="260"/>
-      <line x1="1040" y1="0" x2="1040" y2="260"/><line x1="1120" y1="0" x2="1120" y2="260"/>
+      <line x1="0" y1="280" x2="1200" y2="280"/>
+      <line x1="80" y1="0" x2="80" y2="320"/><line x1="160" y1="0" x2="160" y2="320"/>
+      <line x1="240" y1="0" x2="240" y2="320"/><line x1="320" y1="0" x2="320" y2="320"/>
+      <line x1="400" y1="0" x2="400" y2="320"/><line x1="480" y1="0" x2="480" y2="320"/>
+      <line x1="560" y1="0" x2="560" y2="320"/><line x1="640" y1="0" x2="640" y2="320"/>
+      <line x1="720" y1="0" x2="720" y2="320"/><line x1="800" y1="0" x2="800" y2="320"/>
+      <line x1="880" y1="0" x2="880" y2="320"/><line x1="960" y1="0" x2="960" y2="320"/>
+      <line x1="1040" y1="0" x2="1040" y2="320"/><line x1="1120" y1="0" x2="1120" y2="320"/>
     </g>
 
     <rect y="0" width="1200" height="2" fill="url(#accent)"/>
 
     <!-- Global scan sweep -->
     <line x1="0" y1="0" x2="1200" y2="0" stroke="#0550ae" stroke-width="0.8" opacity="0">
-      <animate attributeName="y1" values="-2;262;-2" dur="14s" repeatCount="indefinite"/>
-      <animate attributeName="y2" values="-2;262;-2" dur="14s" repeatCount="indefinite"/>
+      <animate attributeName="y1" values="-2;322;-2" dur="14s" repeatCount="indefinite"/>
+      <animate attributeName="y2" values="-2;322;-2" dur="14s" repeatCount="indefinite"/>
       <animate attributeName="opacity" values="0;0.06;0.06;0" dur="14s" repeatCount="indefinite" keyTimes="0;0.04;0.18;1"/>
     </line>
 
@@ -84,17 +85,18 @@
     <polyline points="1168,10 1190,10 1190,32" fill="none" stroke="#6e40c9" stroke-width="1.5">
       <animate attributeName="opacity" values="0.2;0.6;0.2" dur="4s" begin="2s" repeatCount="indefinite"/>
     </polyline>
-    <polyline points="32,250 10,250 10,228" fill="none" stroke="#0550ae" stroke-width="1.5">
+    <polyline points="32,310 10,310 10,288" fill="none" stroke="#0550ae" stroke-width="1.5">
       <animate attributeName="opacity" values="0.2;0.6;0.2" dur="4s" begin="1s" repeatCount="indefinite"/>
     </polyline>
-    <polyline points="1168,250 1190,250 1190,228" fill="none" stroke="#6e40c9" stroke-width="1.5">
+    <polyline points="1168,310 1190,310 1190,288" fill="none" stroke="#6e40c9" stroke-width="1.5">
       <animate attributeName="opacity" values="0.2;0.6;0.2" dur="4s" begin="3s" repeatCount="indefinite"/>
     </polyline>
     <text x="14" y="8" font-family="'SF Mono',monospace" font-size="7" fill="#0550ae" opacity="0.5">ARMED</text>
     <text x="1118" y="8" font-family="'SF Mono',monospace" font-size="7" fill="#6e40c9" opacity="0.5" text-anchor="end">23 RULES</text>
-    <text x="14" y="258" font-family="'SF Mono',monospace" font-size="7" fill="#0550ae" opacity="0.5">v1.1.0</text>
-    <text x="1118" y="258" font-family="'SF Mono',monospace" font-size="7" fill="#6e40c9" opacity="0.5" text-anchor="end">MIT</text>
+    <text x="14" y="318" font-family="'SF Mono',monospace" font-size="7" fill="#0550ae" opacity="0.5">v1.1.0</text>
+    <text x="1118" y="318" font-family="'SF Mono',monospace" font-size="7" fill="#6e40c9" opacity="0.5" text-anchor="end">MIT</text>
 
+    <g transform="translate(0,30)">
     <!-- Ambient glow -->
     <ellipse cx="112" cy="130" rx="110" ry="75" fill="#0550ae" opacity="0.05">
       <animate attributeName="opacity" values="0.04;0.08;0.04" dur="4s" repeatCount="indefinite"/>
@@ -289,7 +291,8 @@
       <animate attributeName="opacity" values="0;0.15;0;0" dur="7s" repeatCount="indefinite" keyTimes="0;0.25;0.6;1"/>
     </rect>
 
-    <rect y="258" width="1200" height="2" fill="url(#accent)" opacity="0.5"/>
-    <rect width="1200" height="260" fill="none" stroke="#d0d7de" stroke-width="1.5" rx="14"/>
+    </g>
+    <rect y="318" width="1200" height="2" fill="url(#accent)" opacity="0.5"/>
+    <rect width="1200" height="320" fill="none" stroke="#d0d7de" stroke-width="1.5" rx="14"/>
   </g>
 </svg>
