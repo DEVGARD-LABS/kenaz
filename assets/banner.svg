@@ -196,14 +196,14 @@
       <animate attributeName="opacity" from="0" to="0.97" begin="1.2s" dur="0.6s" fill="freeze"/>
       <animateTransform attributeName="transform" type="translate" values="0,3;0,0" begin="1.2s" dur="0.6s" fill="freeze" additive="sum"/>
     </text>
-    <!-- Glitch layer (pure SVG, loops every 8s) -->
+    <!-- Glitch layer (loops every 5s) -->
     <text x="237" y="138" font-family="Cinzel,serif" font-size="100" font-weight="900" letter-spacing="12"
       fill="#00d4ff" opacity="0">KENAZ
-      <animate attributeName="opacity" values="0;0;0.35;0;0.2;0;0" dur="8s" repeatCount="indefinite"
-               keyTimes="0;0.855;0.86;0.865;0.875;0.88;1"/>
+      <animate attributeName="opacity" values="0;0;0.5;0;0.3;0;0" dur="5s" repeatCount="indefinite"
+               keyTimes="0;0.82;0.83;0.84;0.87;0.88;1"/>
       <animateTransform attributeName="transform" type="translate"
-        values="0,0;0,0;-3,0;3,0;-1,0;0,0;0,0" dur="8s" repeatCount="indefinite"
-        keyTimes="0;0.855;0.86;0.865;0.875;0.88;1" additive="sum"/>
+        values="0,0;0,0;-6,1;8,-1;-3,0;0,0;0,0" dur="5s" repeatCount="indefinite"
+        keyTimes="0;0.82;0.83;0.84;0.87;0.88;1" additive="sum"/>
     </text>
 
     <!-- Subtitle -->
@@ -228,6 +228,7 @@
       <rect x="237" y="210" width="0" height="5" rx="2.5">
         <animate attributeName="width" values="0;660;660;748;0" dur="5s" begin="2.3s" repeatCount="indefinite"/>
         <animate attributeName="fill" values="#00d4ff;#00d4ff;#a855f7;#a855f7;#00d4ff" dur="5s" begin="2.3s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="1;1;1;1;0;0" keyTimes="0;0.44;0.68;0.84;0.97;1" dur="5s" begin="2.3s" repeatCount="indefinite" calcMode="linear"/>
       </rect>
       <!-- Laser edge: outer glow -->
       <line x1="237" y1="205" x2="237" y2="220" stroke="#5ae4ff" stroke-width="6" opacity="0">
