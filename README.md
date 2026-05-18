@@ -1,8 +1,22 @@
-# Kenaz
+<div align="center">
+  <img src="assets/banner.svg" alt="Kenaz — Security auditor for Claude Code plugins & MCP servers" width="100%" />
+</div>
 
-> Security auditor for Claude Code plugins, MCP servers, and agents — before you install anything.
+<div align="center">
 
-Detects **23 attack patterns** (PA-001..PA-024, PA-013 reserved) mapped to **OWASP Agentic Top 10 2026** and **OWASP MCP Top 10 (beta)**. Runs entirely on your machine using the Claude model you already have. Free, offline, no account required.
+[![Version](https://img.shields.io/badge/version-1.1.0-3d8ef0?style=flat-square)](https://github.com/devgard-labs/kenaz/releases)
+[![License](https://img.shields.io/badge/license-MIT-56d364?style=flat-square)](LICENSE)
+[![Tests](https://img.shields.io/badge/tests-99%20passing-56d364?style=flat-square)](tests/)
+[![Offline](https://img.shields.io/badge/100%25-offline-3d8ef0?style=flat-square)](#)
+[![Zero deps](https://img.shields.io/badge/deps-zero-d2a8ff?style=flat-square)](#)
+[![OWASP](https://img.shields.io/badge/OWASP-Agentic_Top_10-e3b341?style=flat-square)](rules/PA-RULES.md)
+
+**Audit Claude Code plugins and MCP servers before they run on your machine.**  
+23 detection rules · OWASP mapped · SHA-256 cache · SARIF output · CI ready
+
+[Install](#install) · [Usage](#usage) · [Rules catalog](rules/PA-RULES.md) · [Changelog](CHANGELOG.md)
+
+</div>
 
 ---
 
@@ -12,20 +26,40 @@ Detects **23 attack patterns** (PA-001..PA-024, PA-013 reserved) mapped to **OWA
 claude plugin install https://github.com/devgard-labs/kenaz
 ```
 
+Requires [Claude Code](https://claude.ai/code). Uses the Claude model you already have — no extra API key, no account, no cost.
+
 ## Usage
 
 ```bash
-# Audit a plugin before installing
-/kenaz <plugin-name>
+/kenaz git-helper          # audit by plugin name
+/kenaz ./my-local-plugin   # audit a local directory
+/kenaz self                # verify the auditor itself hasn't been tampered with
+```
 
-# Audit a local directory
-/kenaz /path/to/plugin
-
-# Verify the auditor itself hasn't been tampered with
-/kenaz self
-
-# CI mode — exits 1 if DO_NOT_INSTALL, 0 otherwise
+**CI mode** (exits `1` if `DO_NOT_INSTALL`, `0` otherwise):
+```bash
 bash scripts/ci-audit.sh /path/to/plugin
+```
+
+### Example output
+
+```
+ᚲ Kenaz — auditing git-helper
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Scanning 4 files...
+
+PA-001 exfiltration .............. PASS
+PA-004 sensitive-read ............ PASS
+PA-015 prompt-injection .......... PASS
+PA-022 shell-injection ........... WARN  git-helper.js:47 — template literal
+PA-019 hook-injection ............ PASS
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Verdict  REVIEW
+Score    88/100
+Cache    saved  (sha256: a3f7c2...)
+
+Review flagged file before installing.
 ```
 
 ---
@@ -41,8 +75,6 @@ bash scripts/ci-audit.sh /path/to/plugin
 | **Prompt injection** | PA-015..PA-016 | `.md` instruction hijacking, hidden HTML comments |
 | **Supply chain** | PA-020..PA-021 | Unversioned `npx -y`, wildcard deps, private registries |
 
----
-
 ## Verdicts
 
 | Verdict | Meaning | Action |
@@ -56,64 +88,68 @@ bash scripts/ci-audit.sh /path/to/plugin
 
 ## How it compares
 
-| Feature | kenaz | Snyk mcp-scan | AgentShield | AgentSeal | Semgrep |
-|---|---|---|---|---|---|
-| **Price** | Free | Requires Snyk account | $19/mo | $19/mo or $199 one-shot | $30/mo/contributor |
-| **100% offline** | ✅ | ❌ Cloud | ❌ Cloud | ❌ Cloud | ❌ Cloud |
-| **Claude Code native** | ✅ `/kenaz` | ❌ | ❌ | ❌ | ❌ |
-| **Prompt injection scan (.md)** | ✅ PA-015, PA-016 | ❌ | Partial | ❌ | ❌ |
-| **MCP params exfiltration** | ✅ PA-018 | Partial | ❌ | ❌ | ❌ |
-| **Hook injection detection** | ✅ PA-019 | ❌ | ❌ | ❌ | ❌ |
-| **Base64/charcode deobfuscation** | ✅ Active | Partial | ❌ | ❌ | Partial |
+| Feature | **Kenaz** | Snyk mcp-scan | AgentShield | AgentSeal | Semgrep |
+|---|:---:|:---:|:---:|:---:|:---:|
+| **Price** | **Free** | Snyk account | $19/mo | $19/mo | $30/mo |
+| **100% offline** | ✅ | ❌ | ❌ | ❌ | ❌ |
+| **Claude Code native** | ✅ | ❌ | ❌ | ❌ | ❌ |
+| **Prompt injection (.md scan)** | ✅ | ❌ | Partial | ❌ | ❌ |
+| **MCP params exfiltration** | ✅ | Partial | ❌ | ❌ | ❌ |
+| **Hook injection detection** | ✅ | ❌ | ❌ | ❌ | ❌ |
+| **Base64/charcode deobfuscation** | ✅ | Partial | ❌ | ❌ | Partial |
 | **SHA-256 audit cache** | ✅ | ❌ | ❌ | ✅ | ❌ |
 | **CI mode (exit code)** | ✅ | ✅ | ❌ | ✅ | ✅ |
-| **OWASP Agentic Top 10 mapping** | ✅ AA:01..AA:10 | Partial | ❌ | ❌ | ❌ |
+| **OWASP Agentic Top 10 mapping** | ✅ | Partial | ❌ | ❌ | ❌ |
 | **Self-test** | ✅ | ❌ | ❌ | ❌ | ❌ |
-| **No npm dependencies** | ✅ | ❌ | ❌ | ❌ | ❌ |
+| **Zero npm dependencies** | ✅ | ❌ | ❌ | ❌ | ❌ |
 
 ---
 
 ## Features
 
-**SHA-256 cache** — Already audited this plugin? If the content hasn't changed, re-auditing is skipped instantly. Results stored in `~/.claude/audit-cache/`.
+**SHA-256 cache** — Already audited this plugin? If the content hasn't changed, re-auditing is instant. Cache stored at `~/.claude/audit-cache/`.
 
-**Deobfuscation** — Decodes `base64` payloads and `String.fromCharCode()` sequences at analysis time, then reports what's inside before emitting a verdict.
+**Deobfuscation** — Decodes `base64` payloads and `String.fromCharCode()` sequences before emitting a verdict. You see what the code actually does.
 
-**CI mode** — `ci-audit.sh` returns exit code `1` if verdict is `DO_NOT_INSTALL`. Add it to your pipeline before any plugin installation step.
+**CI mode** — `ci-audit.sh` exits `1` on `DO_NOT_INSTALL`. Drop it before any plugin install step in your pipeline.
 
-**Self-test** — `/kenaz self` makes the auditor audit its own directory. Useful to verify integrity after updates.
+**Self-test** — `/kenaz self` audits the auditor itself. Detects tampering after updates.
 
 ---
 
 ## Rules catalog
 
 Full rules with detection patterns, malicious/benign examples, and false-positive guidance:
-[`rules/PA-RULES.md`](rules/PA-RULES.md)
-
----
+→ [`rules/PA-RULES.md`](rules/PA-RULES.md)
 
 ## Test suite
-
-Validate the golden set structure without invoking the LLM:
 
 ```bash
 bash tests/validate-golden-set.sh --verbose
 # 99 checks, 0 failures
 ```
 
+14 test plugins (safe, malicious, ambiguous). No LLM required to run the suite.
+
 ---
 
 ## Why this exists
 
 The Claude Code plugin ecosystem is growing fast. In April 2026:
-- CVE-2025-6514 demonstrated real MCP server exfiltration in production
-- 36.7% of MCP servers tested had SSRF vulnerabilities (research, Q1 2026)
+- **CVE-2025-6514** demonstrated real MCP server exfiltration in production
+- **36.7%** of MCP servers tested had SSRF vulnerabilities (research, Q1 2026)
 - Snyk acquired Invariant Labs specifically for MCP security
-- Lakera was acquired for $300M — agent security is real infrastructure now
+- Lakera was acquired for **$300M** — agent security is real infrastructure now
 
-Most tools are cloud-based and expensive. Kenaz is the free, offline, Claude-native option.
+Most tools are cloud-based and expensive. Kenaz is the free, offline, Claude-native option. No data leaves your machine.
 
 ---
+
+## Contributing
+
+Bug reports, false positive reports, and rule suggestions welcome — see [CONTRIBUTING](#) and the [issue templates](.github/ISSUE_TEMPLATE/).
+
+Security issues: see [SECURITY.md](.github/SECURITY.md).
 
 ## License
 
