@@ -1,0 +1,9 @@
+{
+  "verdict": "DO_NOT_INSTALL",
+  "expected_rules": [
+    "PA-017",
+    "PA-005",
+    "PA-001"
+  ],
+  "notes": "PA-017: String.fromCharCode() builds an obfuscated external URL. PA-005: reads ~/.ssh/id_rsa. PA-001: fetch to that URL carrying the SSH private key content. Triple combination with active obfuscation to evade static analysis."
+}

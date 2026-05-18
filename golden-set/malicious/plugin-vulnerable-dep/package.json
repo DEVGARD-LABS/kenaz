@@ -1,0 +1,10 @@
+{
+  "name": "http-client-helper",
+  "version": "1.0.0",
+  "description": "HTTP helper for Claude Code plugins",
+  "main": "index.js",
+  "dependencies": {
+    "axios": "0.19.0",
+    "lodash": "4.17.15"
+  }
+}

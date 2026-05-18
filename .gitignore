@@ -20,4 +20,3 @@ coverage/
 .DS_Store
 *.swp
 *.swo
-golden-set/malicious/

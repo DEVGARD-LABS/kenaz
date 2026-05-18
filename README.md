@@ -116,10 +116,10 @@ Full rules with detection patterns, malicious/benign examples, and false-positiv
 
 ```bash
 bash tests/validate-golden-set.sh --verbose
-# 44 checks, 0 failures
+# 101 checks, 0 failures
 ```
 
-6 test plugins (safe + ambiguous). The malicious fixtures are excluded from the public repo — they contain bypass patterns that would make it easier to evade detection. No LLM required to run the suite.
+14 test plugins across 3 categories: `safe`, `ambiguous`, and `malicious`. The malicious fixtures show real bypass patterns — exfiltration, hook injection, obfuscation, prompt injection — so you can see exactly what Kenaz detects and why. No LLM required to run the suite.
 
 ---
 
