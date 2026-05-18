@@ -109,7 +109,7 @@ function buildSarif(auditData) {
         driver: {
           name: 'kenaz',
           version: '1.1.0',
-          informationUri: 'https://github.com/aurvang/kenaz',
+          informationUri: 'https://github.com/devgard-labs/kenaz',
           rules: rules.length > 0 ? rules : [{ id: 'PLUGIN-AUDIT', name: 'PluginAuditVerdict', shortDescription: { text: 'Overall plugin audit verdict' } }]
         }
       },

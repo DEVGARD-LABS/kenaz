@@ -9,7 +9,7 @@ Detects **23 attack patterns** (PA-001..PA-024, PA-013 reserved) mapped to **OWA
 ## Install
 
 ```bash
-claude plugin install https://github.com/aurvang/kenaz
+claude plugin install https://github.com/devgard-labs/kenaz
 ```
 
 ## Usage

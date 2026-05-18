@@ -4,6 +4,6 @@
   "version": "1.1.0",
   "author": "Aurvang Industries",
   "license": "MIT",
-  "homepage": "https://github.com/aurvang/kenaz",
+  "homepage": "https://github.com/devgard-labs/kenaz",
   "keywords": ["security", "audit", "claude-code", "mcp", "plugin", "owasp", "supply-chain"]
 }
