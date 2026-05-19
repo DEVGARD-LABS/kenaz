@@ -30,25 +30,28 @@ Real-world audit results from running Kenaz against widely-used Claude Code plug
 
 ## Most used
 
-Top 15 by estimated install volume. Full details in the sections below.
+Ranked by npm + PyPI downloads, last 30 days — snapshot **2026-05-19**. Re-run `/kenaz <plugin>` to get an updated verdict for any entry.
 
-| # | Plugin | Author | Verdict | Quick take |
+> `firebase-tools` downloads reflect the full Firebase CLI, not MCP-specific usage. `@playwright/mcp` is likely inflated by CI pipelines. HTTP remote MCPs have no download metric.
+
+| # | Plugin | Downloads/mo | Verdict | Quick take |
 |---|---|---|---|---|
-| 1 | filesystem | Anthropic | ✅ SAFE_WITH_CODE | Dep CVE (minimatch) — run `npm audit fix`. Logic is safe |
-| 2 | git | Anthropic | ✅ SAFE_WITH_CODE | uv.lock + SHA256; active flag-injection defense |
-| 3 | fetch | Anthropic | ✅ SAFE_WITH_CODE | PA-015 note: tool description phrasing — function is legitimate |
-| 4 | sequential-thinking | Anthropic | ✅ SAFE_WITH_CODE | Purely in-memory, zero network |
-| 5 | memory | Anthropic | ✅ SAFE_WITH_CODE | Local JSONL graph, zero network |
-| 6 | github | GitHub | ✅ SAFE | HTTP remote, no local code |
-| 7 | figma | Figma | ✅ SAFE | HTTP remote, OAuth — no npm on host |
-| 8 | playwright | Microsoft | ⚠️ REVIEW | Unpinned `@latest` — pin version before use |
-| 9 | context7 | Upstash | ⚠️ REVIEW | Unpinned `@latest` + external API by design |
-| 10 | notion | Notion | ✅ SAFE_WITH_CODE | Pin to `@2.2.1` — official docs use unpinned npx |
-| 11 | cloudflare | Cloudflare | ✅ SAFE | HTTP remote (Workers), no npm on host |
-| 12 | stripe | Stripe | ✅ SAFE_WITH_CODE | Proxies to `mcp.stripe.com` — use restricted keys |
-| 13 | supabase | Supabase | ✅ SAFE_WITH_CODE | Pin to `@0.8.1`, LLM instructions suggest unpinned npx |
-| 14 | linear | Linear | ✅ SAFE | HTTP remote, no local code |
-| 15 | sentry | Sentry | ⚠️ REVIEW | `sendDefaultPii:true` ships tool context to sentry.io |
+| 1 | playwright | 9.2M | ⚠️ REVIEW | Unpinned `@latest` — pin version before use |
+| 2 | firebase | 6.9M ⚠️ inflated | ⚠️ REVIEW | General CLI, not MCP-only — unpinned + `-y` flag |
+| 3 | context7 | 4.8M | ⚠️ REVIEW | Unpinned `@latest` + external API by design |
+| 4 | git (PyPI) | 1.7M | ✅ SAFE_WITH_CODE | uv.lock + SHA256; flag-injection defense |
+| 5 | fetch (PyPI) | 1.3M | ✅ SAFE_WITH_CODE | PA-015 note: override phrasing in description |
+| 6 | filesystem | 1.3M | ✅ SAFE_WITH_CODE | Run `npm audit fix` (minimatch CVE) |
+| 7 | sequential-thinking | 420K | ✅ SAFE_WITH_CODE | Purely in-memory, zero network |
+| 8 | supabase | 326K | ✅ SAFE_WITH_CODE | Pin to `@0.8.1` |
+| 9 | memory | 306K | ✅ SAFE_WITH_CODE | Local JSONL graph, zero network |
+| 10 | sentry | 260K | ⚠️ REVIEW | `sendDefaultPii:true` ships tool context to `sentry.io` |
+| 11 | notion | 259K | ✅ SAFE_WITH_CODE | Pin to `@2.2.1` |
+| 12 | next-devtools-mcp | 250K | ⚠️ REVIEW | PA-023 CRITICAL: `"FORGET ALL PRIOR KNOWLEDGE"` in tool description |
+| 13 | slack | 230K | ⚠️ REVIEW | npm/source version gap — cannot audit what executes |
+| 14 | stripe | 132K | ✅ SAFE_WITH_CODE | All calls proxied to `mcp.stripe.com` — use restricted keys |
+
+**HTTP remote MCPs** (no npm metric, zero local code): github · figma · cloudflare · linear · gitlab · asana · greptile
 
 ---
 
