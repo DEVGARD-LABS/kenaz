@@ -4,92 +4,181 @@ Real-world audit results from running Kenaz against widely-used Claude Code plug
 
 > **Methodology:** Each plugin is audited against all 23 Kenaz detection rules (PA-001 through PA-022). Results reflect the plugin at the version/commit available at audit date. Plugins update — re-run `/kenaz <plugin>` to verify the current version.
 
-> **Responsible disclosure:** Before publishing any REVIEW or DO_NOT_INSTALL verdict for a plugin not listed here, Kenaz contacts the author and allows 48h to respond or remediate. We do not publish verdicts designed to harm — we publish them to protect users.
+> **Responsible disclosure:** Before publishing any REVIEW or DO_NOT_INSTALL verdict for a plugin not listed here, Kenaz contacts the author and allows 48h to respond or remediate.
 
 ---
 
-## Results
+## Navigation
 
-| Plugin | Author | Type | Verdict | Key finding | Audited |
-|---|---|---|---|---|---|
-| claude-md-management | Anthropic | Commands + Skills (.md) | ✅ SAFE | Manages CLAUDE.md files across sessions — pure .md instructions, no executable code | 2026-05-19 |
-| code-modernization | Anthropic | Agents + Command (.md) | ✅ SAFE | 5-agent workflow for legacy code (COBOL/Java/monoliths) — all .md agents, no executable code | 2026-05-19 |
-| ralph-loop | Anthropic | Hook (bash) | ✅ SAFE_WITH_CODE | Stop hook intercepts session exit for iterative loops — no network, no secrets, transparent bash logic, jq/perl for JSON parsing only | 2026-05-19 |
-| session-report | Anthropic | Skill (.md) | ✅ SAFE | Pure .md skill for generating session summaries — no executable code | 2026-05-19 |
-| skill-creator | Anthropic | Skill (.md) | ✅ SAFE | Pure .md skill for creating and optimizing Claude Code skills — no executable code | 2026-05-19 |
-| agent-sdk-dev | Anthropic | Agents + Command (.md) | ✅ SAFE | Agent SDK development toolkit — all .md, no executable code | 2026-05-19 |
-| math-olympiad | Anthropic | Skill (.md) | ✅ SAFE | Math competition solver with adversarial verification — pure .md skill, no executable code | 2026-05-19 |
-| cwc-makers | Anthropic | Command (.md) | ⚠️ REVIEW | PA-020/PA-021: `/maker-setup` clones `github.com/moremas/build-with-claude` at HEAD (no pin) and executes `onboard.py` — unknown author `moremas`, unpinned. Fix: pin to a specific commit hash before use | 2026-05-19 |
-| feature-dev | Anthropic | Agents + Command (.md) | ✅ SAFE | Multi-agent feature workflow (explorer/architect/reviewer) — .md only, no executable code, KillShell is a declared native tool not custom code | 2026-05-18 |
-| frontend-design | Anthropic | Skill (.md) | ✅ SAFE | Pure .md design guidance — zero executable code, no network, no filesystem access | 2026-05-18 |
-| mcp-server-dev | Anthropic | Skills + References (.md) | ✅ SAFE | Build guides for MCP servers — WebFetch to `claude.com/docs` is documented and justified, no executable code | 2026-05-18 |
-| playground | Anthropic | Skill + Templates (.md) | ✅ SAFE | HTML playground generator — JS in SKILL.md is example text to guide generation, not plugin code | 2026-05-18 |
-| security-guidance | Anthropic | Hook (Python) | ✅ SAFE_WITH_CODE | Defensive PreToolUse hook — no network, no secrets access, transparent logic | 2026-05-18 |
-| commit-commands | Anthropic | Commands (.md) | ✅ SAFE | Pure .md slash commands with explicit `allowed-tools` restrictions | 2026-05-18 |
-| code-review | Anthropic | Agent (.md) | ✅ SAFE | Multi-agent PR review, `allowed-tools` scoped to `gh` read operations | 2026-05-18 |
-| hookify | Anthropic | Hook framework (Python) | ✅ SAFE_WITH_CODE | Intercepts all hook events by design — code is transparent, no network, no eval | 2026-05-18 |
-| code-simplifier | Anthropic | Agent (.md) | ✅ SAFE | Single .md agent with no executable code or external access | 2026-05-18 |
-| pr-review-toolkit | Anthropic | Agents + Command | ✅ SAFE | 6 review agents, Bash declared and scoped to git/gh read operations | 2026-05-18 |
-| typescript-lsp | Anthropic | Docs only | ✅ SAFE | Documentation only — no plugin code, guides user to install public npm packages manually | 2026-05-18 |
-| clangd-lsp | Anthropic | Docs only | ✅ SAFE | Documentation only — guides user to install clangd via brew/apt/winget. No plugin code | 2026-05-19 |
-| gopls-lsp | Anthropic | Docs only | ✅ SAFE | Documentation only — guides user to install gopls via go install or brew. No plugin code | 2026-05-19 |
-| pyright-lsp | Anthropic | Docs only | ✅ SAFE | Documentation only — guides user to install Pyright via npm or brew. No plugin code | 2026-05-19 |
-| rust-analyzer-lsp | Anthropic | Docs only | ✅ SAFE | Documentation only — guides user to install rust-analyzer via rustup or brew. No plugin code | 2026-05-19 |
-| ruby-lsp | Anthropic | Docs only | ✅ SAFE | Documentation only — guides user to install ruby-lsp via gem. No plugin code | 2026-05-19 |
-| kotlin-lsp | Anthropic | Docs only | ✅ SAFE | Documentation only — guides user to install Kotlin LSP via brew or IntelliJ toolchain. No plugin code | 2026-05-19 |
-| swift-lsp | Anthropic | Docs only | ✅ SAFE | Documentation only — guides user to install sourcekit-lsp via Xcode or swift.org. No plugin code | 2026-05-19 |
-| lua-lsp | Anthropic | Docs only | ✅ SAFE | Documentation only — guides user to install lua-language-server via brew or mason. No plugin code | 2026-05-19 |
-| php-lsp | Anthropic | Docs only | ✅ SAFE | Documentation only — guides user to install Intelephense via npm. No plugin code | 2026-05-19 |
-| csharp-lsp | Anthropic | Docs only | ✅ SAFE | Documentation only — guides user to install OmniSharp or roslyn via dotnet. No plugin code | 2026-05-19 |
-| jdtls-lsp | Anthropic | Docs only | ✅ SAFE | Documentation only — guides user to install Eclipse JDT.LS via brew or manual download. Requires JDK 17+ | 2026-05-19 |
-| claude-code-setup | Anthropic | Agent + Skill | ✅ SAFE_WITH_CODE | Bash read-only (ls, cat) for project inspection — no network, no sensitive paths | 2026-05-18 |
-| github | GitHub | MCP (HTTP remote) | ✅ SAFE | HTTP bridge to `api.githubcopilot.com` — zero local code, token from env var | 2026-05-18 |
-| linear | Linear | MCP (HTTP remote) | ✅ SAFE | HTTP bridge to `mcp.linear.app` — zero local code | 2026-05-18 |
-| gitlab | GitLab | MCP (HTTP remote) | ✅ SAFE | HTTP bridge to `gitlab.com/api/v4/mcp` — zero local code | 2026-05-18 |
-| greptile | Greptile | MCP (HTTP remote) | ✅ SAFE | HTTP bridge to `api.greptile.com` — only useful if already a Greptile customer | 2026-05-18 |
-| playwright | Microsoft | MCP (npx) | ⚠️ REVIEW | PA-020: `npx @playwright/mcp@latest` — no version pin. Fix: pin to specific version | 2026-05-18 |
-| firebase | Google | MCP (npx) | ⚠️ REVIEW | PA-020: `npx -y firebase-tools@latest` — no pin + `-y` flag + access to Firebase credentials | 2026-05-18 |
-| context7 | Upstash | MCP (npx) | ⚠️ REVIEW | PA-020: `npx -y @upstash/context7-mcp` — no pin + sends queries to external API by design | 2026-05-18 |
-| serena | Oraios | MCP (uvx/git) | ❌ DO_NOT_INSTALL | PA-020 HIGH: `uvx git+https://github.com/oraios/serena` — installs from HEAD with no commit hash. Unknown author. Any push to that repo executes on your machine. | 2026-05-18 |
-| asana | Asana | MCP (HTTP remote SSE) | ✅ SAFE | HTTP SSE bridge to `mcp.asana.com` — zero local code, token from env var | 2026-05-18 |
-| terraform | HashiCorp | MCP (Docker) | ✅ SAFE_WITH_CODE | Docker image pinned at `hashicorp/terraform-mcp-server:0.4.0` — containerized, TFE_TOKEN from env var, no local code to audit | 2026-05-18 |
-| laravel-boost | BeyondCode | MCP (PHP artisan) | ✅ SAFE_WITH_CODE | Runs user's own `php artisan boost:mcp` — zero external code, no network, executes code the user already owns and installed | 2026-05-18 |
-| fakechat | Anthropic | MCP (TypeScript/bun) | ✅ SAFE_WITH_CODE | Localhost-only test/demo tool bound to `127.0.0.1:8787` — zero external calls, WebSocket UI for simulating chat, bun.lock pins all deps | 2026-05-18 |
-| discord | Anthropic | MCP (TypeScript/bun) | ✅ SAFE_WITH_CODE | Transparent Discord bot — token from `~/.claude/channels/discord/.env`, `assertSendable()` prevents state file exfiltration, bun.lock pins deps (PA-021 mitigated) | 2026-05-18 |
-| imessage | Anthropic | MCP (TypeScript/bun) | ✅ SAFE_WITH_CODE | Reads local `~/Library/Messages/chat.db` + osascript for sending — no external network, pairing/allowlist access controls, `assertSendable()` guard, bun.lock pins deps | 2026-05-18 |
-| telegram | Anthropic | MCP (TypeScript/bun) | ✅ SAFE_WITH_CODE | Transparent Telegram bot — token from env, network limited to `api.telegram.org` (own bot), `safeName()` + `assertSendable()` injection/exfiltration guards, bun.lock pins deps (PA-021 mitigated) | 2026-05-18 |
-| filesystem | Anthropic | MCP (Node.js/TS) | ✅ SAFE_WITH_CODE | PA-024: `minimatch ^10.0.1` covers 3 ReDoS CVEs HIGH (GHSA-7r86, GHSA-23c5, GHSA-3ppc) — fix: `npm audit fix` or pin `>=10.2.3`. Logic is safe: symlink protection, path traversal prevention, atomic writes | 2026-05-19 |
-| git | Anthropic | MCP (Python/uvx) | ✅ SAFE_WITH_CODE | uv.lock with SHA256 pins all deps; active anti flag-injection defense on every user input; always configure `--repository /path` to restrict repo scope | 2026-05-19 |
-| memory | Anthropic | MCP (Node.js/TS) | ✅ SAFE_WITH_CODE | Local JSONL knowledge graph, zero network, minimal deps (SDK only) — env var limited to local path config, no data leaves machine | 2026-05-19 |
-| fetch | Anthropic | MCP (Python/uvx) | ✅ SAFE_WITH_CODE | PA-015: tool description contains `"this tool now grants you internet access"` — semantic LLM override pattern. Function is legitimate (fetch URLs to Markdown). No exfiltration of local data. Respects robots.txt | 2026-05-19 |
-| sequential-thinking | Anthropic | MCP (Node.js/TS) | ✅ SAFE_WITH_CODE | Purely in-memory reasoning chain — zero network, zero filesystem, no env var leaks, no deps with known advisories | 2026-05-19 |
-| figma | Figma | MCP (HTTP remote) | ✅ SAFE | HTTP remote to `mcp.figma.com`, zero local code, OAuth — no npm supply chain on host; tool schemas served remotely (opaque but Figma Inc. is verifiable origin) | 2026-05-19 |
-| supabase | Supabase | MCP (npx) | ✅ SAFE_WITH_CODE | PA-020 MEDIUM: server instructions suggest unpinned `npx skills add supabase/agent-skills` to LLM — in shell-enabled environments, downloads latest on every session. Fix: pin to `@0.8.1` | 2026-05-19 |
-| notion | Notion | MCP (npx) | ✅ SAFE_WITH_CODE | PA-020: official docs use `npx -y` unpinned; PA-006 LOW (dead code): file upload path accepts unsanitized paths — currently harmless, activates if upload endpoints added. Fix: pin to `@2.2.1` | 2026-05-19 |
-| slack | Anthropic (archived) | MCP (npx) | ⚠️ REVIEW | npm publishes `2025.4.25` but archived source is `0.6.2` — cannot audit what actually executes; PA-020 + SDK 1.0.1 outdated. Fix: inspect `node_modules` post-install or use Docker image | 2026-05-19 |
-| stripe | Stripe | MCP (npx proxy) | ✅ SAFE_WITH_CODE | PA-020: unpinned + all MCP tool calls proxied verbatim to `mcp.stripe.com` by design (transparent, documented). Use Restricted Keys (`rk_*`), pin to `@0.3.3` | 2026-05-19 |
-| sentry | Sentry | MCP (npx) | ⚠️ REVIEW | PA-001 HIGH: `sendDefaultPii: true` sends error context (may include tool call arguments) to `sentry.io` by default without explicit user warning; PA-020: `@latest` unpinned. Fix: pin version + verify scrubbing covers your data | 2026-05-19 |
-| aws-labs | AWS | MCP (uvx, 30+ servers) | ⚠️ REVIEW | PA-020: all 30+ servers documented with `uvx @latest` — supply chain unverified at scale. Individual servers (e.g. aws-documentation) are code-clean. Fix: pin each server with `==X.Y.Z` before use in production | 2026-05-19 |
-| cloudflare | Cloudflare | MCP (HTTP remote) | ✅ SAFE | 100% HTTP remote (Cloudflare Workers + OAuth), zero local code — no npm supply chain on host, all calls to `api.cloudflare.com` only | 2026-05-19 |
-| next-devtools-mcp | Vercel | MCP (npx) | ⚠️ REVIEW | PA-023 CRITICAL: `init` tool description injects `"FORGET ALL PRIOR KNOWLEDGE"` + `"MANDATORY"` imperatives to override LLM behavior; PA-001 HIGH: telemetry (OS metadata + hashed cwd) sent to `telemetry.nextjs.org` without opt-in. Set `NEXT_TELEMETRY_DISABLED=1` | 2026-05-19 |
-| prisma | Prisma | MCP (npx) | ⚠️ REVIEW | PA-010 HIGH: `preinstall` script runs at `npm install` (npm tarball may differ from GitHub stub); PA-008: LLM controls `cwd` in `migrate-reset --force` with no server-side confirmation guard | 2026-05-19 |
+**By type →** [MCP Servers](#mcp-servers) · [Plugins & Hooks](#plugins--hooks) · [LSP / Docs only](#lsp--docs-only)
+
+**By verdict →** [❌ DO_NOT_INSTALL](#-do_not_install) · [⚠️ REVIEW](#️-review) · [✅ SAFE / SAFE_WITH_CODE](#-safe--safe_with_code)
+
+---
+
+## Coverage
+
+| | MCP Servers | Plugins & Hooks | LSP / Docs | Total |
+|---|:---:|:---:|:---:|:---:|
+| ✅ SAFE | 7 | 14 | 12 | **33** |
+| ✅ SAFE_WITH_CODE | 14 | 4 | — | **18** |
+| ⚠️ REVIEW | 8 | 1 | — | **9** |
+| ❌ DO_NOT_INSTALL | 1 | — | — | **1** |
+| **Total** | **30** | **19** | **12** | **61** |
+
+---
+
+## Most used
+
+Top 15 by estimated install volume. Full details in the sections below.
+
+| # | Plugin | Author | Verdict | Quick take |
+|---|---|---|---|---|
+| 1 | filesystem | Anthropic | ✅ SAFE_WITH_CODE | Dep CVE (minimatch) — run `npm audit fix`. Logic is safe |
+| 2 | git | Anthropic | ✅ SAFE_WITH_CODE | uv.lock + SHA256; active flag-injection defense |
+| 3 | fetch | Anthropic | ✅ SAFE_WITH_CODE | PA-015 note: tool description phrasing — function is legitimate |
+| 4 | sequential-thinking | Anthropic | ✅ SAFE_WITH_CODE | Purely in-memory, zero network |
+| 5 | memory | Anthropic | ✅ SAFE_WITH_CODE | Local JSONL graph, zero network |
+| 6 | github | GitHub | ✅ SAFE | HTTP remote, no local code |
+| 7 | figma | Figma | ✅ SAFE | HTTP remote, OAuth — no npm on host |
+| 8 | playwright | Microsoft | ⚠️ REVIEW | Unpinned `@latest` — pin version before use |
+| 9 | context7 | Upstash | ⚠️ REVIEW | Unpinned `@latest` + external API by design |
+| 10 | notion | Notion | ✅ SAFE_WITH_CODE | Pin to `@2.2.1` — official docs use unpinned npx |
+| 11 | cloudflare | Cloudflare | ✅ SAFE | HTTP remote (Workers), no npm on host |
+| 12 | stripe | Stripe | ✅ SAFE_WITH_CODE | Proxies to `mcp.stripe.com` — use restricted keys |
+| 13 | supabase | Supabase | ✅ SAFE_WITH_CODE | Pin to `@0.8.1`, LLM instructions suggest unpinned npx |
+| 14 | linear | Linear | ✅ SAFE | HTTP remote, no local code |
+| 15 | sentry | Sentry | ⚠️ REVIEW | `sendDefaultPii:true` ships tool context to sentry.io |
+
+---
+
+## MCP Servers
+
+### ❌ DO_NOT_INSTALL
+
+| Plugin | Author | Type | Key finding | Audited |
+|---|---|---|---|---|
+| serena | Oraios | uvx/git | PA-020 HIGH: `uvx git+https://github.com/oraios/serena` — no commit hash, unknown author. Every push to that repo executes on your machine | 2026-05-18 |
+
+### ⚠️ REVIEW
+
+| Plugin | Author | Type | Key finding | Audited |
+|---|---|---|---|---|
+| next-devtools-mcp | Vercel | npx | PA-023 CRITICAL: `init` tool injects `"FORGET ALL PRIOR KNOWLEDGE"` + `"MANDATORY"` to override LLM; PA-001: telemetry to `telemetry.nextjs.org` without opt-in. Set `NEXT_TELEMETRY_DISABLED=1` | 2026-05-19 |
+| slack | Anthropic (archived) | npx | npm `2025.4.25` vs archived source `0.6.2` — code gap not auditable; PA-020 + SDK 1.0.1 outdated. Inspect `node_modules/` post-install | 2026-05-19 |
+| sentry | Sentry | npx | PA-001 HIGH: `sendDefaultPii:true` may ship tool call arguments to `sentry.io`; `@latest` unpinned. Pin version + verify scrubbing | 2026-05-19 |
+| prisma | Prisma | npx | PA-010 HIGH: `preinstall` script runs at install (tarball may differ from GitHub stub); LLM controls `cwd` in `migrate-reset --force` — no server-side guard | 2026-05-19 |
+| aws-labs | AWS | uvx (30+ servers) | PA-020: all 30+ servers documented with `uvx @latest`. Code is clean individually — pin each with `==X.Y.Z` before production use | 2026-05-19 |
+| playwright | Microsoft | npx | PA-020: `npx @playwright/mcp@latest` — unpinned. Fix: pin to specific version | 2026-05-18 |
+| firebase | Google | npx | PA-020: `npx -y firebase-tools@latest` — no pin + `-y` + Firebase credentials access | 2026-05-18 |
+| context7 | Upstash | npx | PA-020: `npx -y @upstash/context7-mcp` — unpinned + sends queries to external API by design | 2026-05-18 |
+
+### ✅ SAFE_WITH_CODE
+
+| Plugin | Author | Type | Key finding | Audited |
+|---|---|---|---|---|
+| filesystem | Anthropic | Node.js/TS | PA-024: `minimatch ^10.0.1` has 3 ReDoS CVEs — run `npm audit fix`. Symlink/path-traversal protection is solid | 2026-05-19 |
+| git | Anthropic | Python/uvx | uv.lock SHA256 pins all deps; active anti flag-injection on every input; use `--repository /path` to scope | 2026-05-19 |
+| memory | Anthropic | Node.js/TS | Local JSONL graph, zero network, minimal deps — env var for local path only | 2026-05-19 |
+| fetch | Anthropic | Python/uvx | PA-015: description contains `"this tool now grants you internet access"` — semantic override pattern; function is legitimate, no local data exfiltration | 2026-05-19 |
+| sequential-thinking | Anthropic | Node.js/TS | Purely in-memory reasoning chain — zero network, zero filesystem, no env leaks | 2026-05-19 |
+| discord | Anthropic | TypeScript/bun | Transparent Discord bot; `assertSendable()` prevents exfiltration; bun.lock pins deps (PA-021 mitigated) | 2026-05-18 |
+| imessage | Anthropic | TypeScript/bun | Reads local `chat.db` + osascript; no external network; pairing/allowlist controls; bun.lock pins deps | 2026-05-18 |
+| telegram | Anthropic | TypeScript/bun | Transparent Telegram bot; network limited to `api.telegram.org`; `safeName()` + `assertSendable()` guards; bun.lock pins deps | 2026-05-18 |
+| fakechat | Anthropic | TypeScript/bun | Localhost-only (`127.0.0.1:8787`) test tool — zero external calls; bun.lock pins deps | 2026-05-18 |
+| terraform | HashiCorp | Docker | Image pinned at `hashicorp/terraform-mcp-server:0.4.0` — containerized, TFE_TOKEN from env | 2026-05-18 |
+| laravel-boost | BeyondCode | PHP artisan | Runs user's own `php artisan boost:mcp` — zero external code, no network | 2026-05-18 |
+| supabase | Supabase | npx | PA-020 MEDIUM: LLM instructions suggest unpinned `npx skills add` — pin to `@0.8.1` | 2026-05-19 |
+| notion | Notion | npx | PA-020: official docs unpinned; PA-006 LOW dead-code path — pin to `@2.2.1` | 2026-05-19 |
+| stripe | Stripe | npx proxy | All tool calls proxied to `mcp.stripe.com` (transparent, documented) — use Restricted Keys (`rk_*`), pin to `@0.3.3` | 2026-05-19 |
+
+### ✅ SAFE
+
+| Plugin | Author | Type | Key finding | Audited |
+|---|---|---|---|---|
+| github | GitHub | HTTP remote | Bridge to `api.githubcopilot.com` — zero local code, token from env | 2026-05-18 |
+| figma | Figma | HTTP remote | `mcp.figma.com`, OAuth — no npm on host; schemas remotely served (Figma Inc. verifiable origin) | 2026-05-19 |
+| cloudflare | Cloudflare | HTTP remote | Cloudflare Workers + OAuth — zero local code, all calls to `api.cloudflare.com` only | 2026-05-19 |
+| linear | Linear | HTTP remote | Bridge to `mcp.linear.app` — zero local code | 2026-05-18 |
+| gitlab | GitLab | HTTP remote | Bridge to `gitlab.com/api/v4/mcp` — zero local code | 2026-05-18 |
+| greptile | Greptile | HTTP remote | Bridge to `api.greptile.com` — useful only if already a Greptile customer | 2026-05-18 |
+| asana | Asana | HTTP remote SSE | SSE bridge to `mcp.asana.com` — zero local code, token from env | 2026-05-18 |
+
+---
+
+## Plugins & Hooks
+
+### ⚠️ REVIEW
+
+| Plugin | Author | Type | Key finding | Audited |
+|---|---|---|---|---|
+| cwc-makers | Anthropic | Command (.md) | PA-020/PA-021: `/maker-setup` clones `github.com/moremas/build-with-claude` at HEAD (no pin, unknown author) and runs `onboard.py`. Pin to a specific commit hash before use | 2026-05-19 |
+
+### ✅ SAFE_WITH_CODE
+
+| Plugin | Author | Type | Key finding | Audited |
+|---|---|---|---|---|
+| ralph-loop | Anthropic | Hook (bash) | Stop hook for iterative loops — no network, no secrets, transparent bash, jq/perl for JSON parsing only | 2026-05-19 |
+| security-guidance | Anthropic | Hook (Python) | Defensive PreToolUse hook — no network, no secrets access, transparent logic | 2026-05-18 |
+| hookify | Anthropic | Hook framework (Python) | Intercepts all hook events by design — transparent code, no network, no eval | 2026-05-18 |
+| claude-code-setup | Anthropic | Agent + Skill | Bash read-only (`ls`, `cat`) for project inspection — no network, no sensitive paths | 2026-05-18 |
+
+### ✅ SAFE
+
+| Plugin | Author | Type | Key finding | Audited |
+|---|---|---|---|---|
+| claude-md-management | Anthropic | Commands + Skills (.md) | Manages CLAUDE.md files — pure .md, no executable code | 2026-05-19 |
+| code-modernization | Anthropic | Agents + Command (.md) | 5-agent legacy code workflow (COBOL/Java/monoliths) — all .md, no executable code | 2026-05-19 |
+| feature-dev | Anthropic | Agents + Command (.md) | Multi-agent feature workflow — .md only, KillShell is a declared native tool | 2026-05-18 |
+| code-review | Anthropic | Agent (.md) | Multi-agent PR review — `allowed-tools` scoped to `gh` read operations | 2026-05-18 |
+| pr-review-toolkit | Anthropic | Agents + Command | 6 review agents — Bash declared and scoped to git/gh read operations | 2026-05-18 |
+| agent-sdk-dev | Anthropic | Agents + Command (.md) | Agent SDK development toolkit — all .md, no executable code | 2026-05-19 |
+| mcp-server-dev | Anthropic | Skills + References (.md) | MCP build guides — WebFetch to `claude.com/docs` justified, no executable code | 2026-05-18 |
+| commit-commands | Anthropic | Commands (.md) | Slash commands with explicit `allowed-tools` restrictions | 2026-05-18 |
+| code-simplifier | Anthropic | Agent (.md) | Single .md agent — no executable code or external access | 2026-05-18 |
+| session-report | Anthropic | Skill (.md) | Generates session summaries — pure .md, no executable code | 2026-05-19 |
+| skill-creator | Anthropic | Skill (.md) | Creates and optimizes Claude Code skills — pure .md | 2026-05-19 |
+| math-olympiad | Anthropic | Skill (.md) | Math competition solver with adversarial verification — pure .md | 2026-05-19 |
+| frontend-design | Anthropic | Skill (.md) | Design guidance — zero executable code, no network, no filesystem access | 2026-05-18 |
+| playground | Anthropic | Skill + Templates (.md) | HTML playground generator — JS in SKILL.md is example text, not plugin code | 2026-05-18 |
+
+---
+
+## LSP / Docs only
+
+All 12 LSP integrations are documentation only — they guide you to install the language server via your system package manager. No plugin code executes.
+
+| Plugin | Language | Install method | Audited |
+|---|---|---|---|
+| typescript-lsp | TypeScript | npm | 2026-05-18 |
+| clangd-lsp | C/C++ | brew / apt / winget | 2026-05-19 |
+| gopls-lsp | Go | go install / brew | 2026-05-19 |
+| pyright-lsp | Python | npm / brew | 2026-05-19 |
+| rust-analyzer-lsp | Rust | rustup / brew | 2026-05-19 |
+| ruby-lsp | Ruby | gem | 2026-05-19 |
+| kotlin-lsp | Kotlin | brew / IntelliJ | 2026-05-19 |
+| swift-lsp | Swift | Xcode / swift.org | 2026-05-19 |
+| lua-lsp | Lua | brew / mason | 2026-05-19 |
+| php-lsp | PHP | npm (Intelephense) | 2026-05-19 |
+| csharp-lsp | C# | dotnet (OmniSharp/roslyn) | 2026-05-19 |
+| jdtls-lsp | Java | brew / manual (JDK 17+) | 2026-05-19 |
 
 ---
 
 ## Verdict reference
 
-| Verdict | Meaning |
-|---|---|
-| ✅ SAFE | Only `.md` instructions, no executable code |
-| ✅ SAFE_WITH_CODE | Has executable code — fully transparent, justified, no network exfiltration |
-| ⚠️ REVIEW | Ambiguous pattern — human review recommended before installing |
-| ❌ DO_NOT_INSTALL | Confirmed risk: supply chain, exfiltration, injection, or obfuscation |
+| Verdict | Meaning | Action |
+|---|---|---|
+| ✅ SAFE | Only `.md` instructions, no executable code | Install |
+| ✅ SAFE_WITH_CODE | Has code — fully transparent, justified, no exfiltration | Install |
+| ⚠️ REVIEW | Ambiguous pattern — human review recommended | Review flagged files first |
+| ❌ DO_NOT_INSTALL | Confirmed risk: supply chain, exfiltration, injection, or obfuscation | Reject |
 
 ---
 
 ## Fixing REVIEW verdicts
 
-**playwright, firebase, context7** — all three fail on the same rule: unpinned `npx` or `npx -y` with `@latest`. The fix is to pin the version in your local `.mcp.json`:
+**playwright, firebase, context7** — all fail PA-020: unpinned `npx` or `npx -y @latest`. Fix: pin the version in your `.mcp.json`:
 
 ```json
 // Instead of:
@@ -101,17 +190,17 @@ Real-world audit results from running Kenaz against widely-used Claude Code plug
 
 Verify the version hash on npm before pinning. After pinning, verdict becomes SAFE_WITH_CODE.
 
-**serena** — the issue is structural: `uvx git+https://` without a commit hash means the installed code changes with every push to the remote repo. This cannot be fixed by the user — the author needs to publish versioned releases on PyPI.
+**serena** — structural issue: `uvx git+https://` without a commit hash means installed code changes with every push to the remote repo. Cannot be fixed by the user — the author needs to publish versioned releases on PyPI.
 
-**slack** — npm publishes a version (`2025.4.25`) that doesn't match the archived source code (`0.6.2`). Cannot verify what actually executes. Workaround: after installing, inspect `node_modules/@modelcontextprotocol/server-slack/dist/` before running, or use the Docker image if available.
+**slack** — npm publishes `2025.4.25` but archived source is `0.6.2`. Cannot verify what actually executes. Workaround: after installing, inspect `node_modules/@modelcontextprotocol/server-slack/dist/` before running, or use the Docker image if available.
 
-**sentry** — `sendDefaultPii: true` is set in the server's Sentry initialization. This means error context including tool call arguments may be sent to `sentry.io`. To mitigate: pin a specific version and review if the data passing through your Sentry installation is acceptable for Sentry's telemetry.
+**sentry** — `sendDefaultPii: true` is set by default. Error context including tool call arguments may be sent to `sentry.io`. Mitigate: pin a specific version and verify the scrubbing logic covers your data before deploying in sensitive environments.
 
 **next-devtools-mcp** — two independent issues:
-1. The `init` tool description contains `"FORGET ALL PRIOR KNOWLEDGE"` and `"MANDATORY CALL FIRST"` imperative override patterns (PA-023). This is a design choice by Vercel, not malware, but it demonstrates how tool descriptions can manipulate LLM behavior.
-2. Telemetry to `telemetry.nextjs.org` (OS metadata + hashed `cwd`) runs without opt-in. Fix: set `NEXT_TELEMETRY_DISABLED=1` in the MCP server environment before using.
+1. The `init` tool description injects `"FORGET ALL PRIOR KNOWLEDGE"` and `"MANDATORY CALL FIRST"` (PA-023). This is Vercel's design choice, not malware — but it's a textbook example of how tool descriptions manipulate LLM behavior.
+2. Telemetry (OS metadata + hashed `cwd`) is sent to `telemetry.nextjs.org` without opt-in. Fix: set `NEXT_TELEMETRY_DISABLED=1` in the MCP server environment.
 
-**aws-labs, prisma** — pin versions before production use. For aws-labs: `uvx awslabs.xxx==X.Y.Z`. For prisma: inspect the npm tarball's `preinstall` script before installing (`npm pack @prisma/cli` → extract → verify `scripts/preinstall-entry.js`).
+**aws-labs, prisma** — pin versions before production use. For aws-labs: `uvx awslabs.xxx==X.Y.Z`. For prisma: inspect the npm tarball's `preinstall` script (`npm pack @prisma/cli` → extract → verify `scripts/preinstall-entry.js` matches the GitHub stub).
 
 ---
 
