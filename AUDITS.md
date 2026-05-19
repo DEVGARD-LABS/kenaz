@@ -58,6 +58,11 @@ Real-world audit results from running Kenaz against widely-used Claude Code plug
 | discord | Anthropic | MCP (TypeScript/bun) | ✅ SAFE_WITH_CODE | Transparent Discord bot — token from `~/.claude/channels/discord/.env`, `assertSendable()` prevents state file exfiltration, bun.lock pins deps (PA-021 mitigated) | 2026-05-18 |
 | imessage | Anthropic | MCP (TypeScript/bun) | ✅ SAFE_WITH_CODE | Reads local `~/Library/Messages/chat.db` + osascript for sending — no external network, pairing/allowlist access controls, `assertSendable()` guard, bun.lock pins deps | 2026-05-18 |
 | telegram | Anthropic | MCP (TypeScript/bun) | ✅ SAFE_WITH_CODE | Transparent Telegram bot — token from env, network limited to `api.telegram.org` (own bot), `safeName()` + `assertSendable()` injection/exfiltration guards, bun.lock pins deps (PA-021 mitigated) | 2026-05-18 |
+| filesystem | Anthropic | MCP (Node.js/TS) | ✅ SAFE_WITH_CODE | PA-024: `minimatch ^10.0.1` covers 3 ReDoS CVEs HIGH (GHSA-7r86, GHSA-23c5, GHSA-3ppc) — fix: `npm audit fix` or pin `>=10.2.3`. Logic is safe: symlink protection, path traversal prevention, atomic writes | 2026-05-19 |
+| git | Anthropic | MCP (Python/uvx) | ✅ SAFE_WITH_CODE | uv.lock with SHA256 pins all deps; active anti flag-injection defense on every user input; always configure `--repository /path` to restrict repo scope | 2026-05-19 |
+| memory | Anthropic | MCP (Node.js/TS) | ✅ SAFE_WITH_CODE | Local JSONL knowledge graph, zero network, minimal deps (SDK only) — env var limited to local path config, no data leaves machine | 2026-05-19 |
+| fetch | Anthropic | MCP (Python/uvx) | ✅ SAFE_WITH_CODE | PA-015: tool description contains `"this tool now grants you internet access"` — semantic LLM override pattern. Function is legitimate (fetch URLs to Markdown). No exfiltration of local data. Respects robots.txt | 2026-05-19 |
+| sequential-thinking | Anthropic | MCP (Node.js/TS) | ✅ SAFE_WITH_CODE | Purely in-memory reasoning chain — zero network, zero filesystem, no env var leaks, no deps with known advisories | 2026-05-19 |
 
 ---
 
