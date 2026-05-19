@@ -12,6 +12,14 @@ Real-world audit results from running Kenaz against widely-used Claude Code plug
 
 | Plugin | Author | Type | Verdict | Key finding | Audited |
 |---|---|---|---|---|---|
+| claude-md-management | Anthropic | Commands + Skills (.md) | ✅ SAFE | Manages CLAUDE.md files across sessions — pure .md instructions, no executable code | 2026-05-19 |
+| code-modernization | Anthropic | Agents + Command (.md) | ✅ SAFE | 5-agent workflow for legacy code (COBOL/Java/monoliths) — all .md agents, no executable code | 2026-05-19 |
+| ralph-loop | Anthropic | Hook (bash) | ✅ SAFE_WITH_CODE | Stop hook intercepts session exit for iterative loops — no network, no secrets, transparent bash logic, jq/perl for JSON parsing only | 2026-05-19 |
+| session-report | Anthropic | Skill (.md) | ✅ SAFE | Pure .md skill for generating session summaries — no executable code | 2026-05-19 |
+| skill-creator | Anthropic | Skill (.md) | ✅ SAFE | Pure .md skill for creating and optimizing Claude Code skills — no executable code | 2026-05-19 |
+| agent-sdk-dev | Anthropic | Agents + Command (.md) | ✅ SAFE | Agent SDK development toolkit — all .md, no executable code | 2026-05-19 |
+| math-olympiad | Anthropic | Skill (.md) | ✅ SAFE | Math competition solver with adversarial verification — pure .md skill, no executable code | 2026-05-19 |
+| cwc-makers | Anthropic | Command (.md) | ⚠️ REVIEW | PA-020/PA-021: `/maker-setup` clones `github.com/moremas/build-with-claude` at HEAD (no pin) and executes `onboard.py` — unknown author `moremas`, unpinned. Fix: pin to a specific commit hash before use | 2026-05-19 |
 | feature-dev | Anthropic | Agents + Command (.md) | ✅ SAFE | Multi-agent feature workflow (explorer/architect/reviewer) — .md only, no executable code, KillShell is a declared native tool not custom code | 2026-05-18 |
 | frontend-design | Anthropic | Skill (.md) | ✅ SAFE | Pure .md design guidance — zero executable code, no network, no filesystem access | 2026-05-18 |
 | mcp-server-dev | Anthropic | Skills + References (.md) | ✅ SAFE | Build guides for MCP servers — WebFetch to `claude.com/docs` is documented and justified, no executable code | 2026-05-18 |
