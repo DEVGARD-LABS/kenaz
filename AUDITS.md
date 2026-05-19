@@ -23,6 +23,17 @@ Real-world audit results from running Kenaz against widely-used Claude Code plug
 | code-simplifier | Anthropic | Agent (.md) | ✅ SAFE | Single .md agent with no executable code or external access | 2026-05-18 |
 | pr-review-toolkit | Anthropic | Agents + Command | ✅ SAFE | 6 review agents, Bash declared and scoped to git/gh read operations | 2026-05-18 |
 | typescript-lsp | Anthropic | Docs only | ✅ SAFE | Documentation only — no plugin code, guides user to install public npm packages manually | 2026-05-18 |
+| clangd-lsp | Anthropic | Docs only | ✅ SAFE | Documentation only — guides user to install clangd via brew/apt/winget. No plugin code | 2026-05-19 |
+| gopls-lsp | Anthropic | Docs only | ✅ SAFE | Documentation only — guides user to install gopls via go install or brew. No plugin code | 2026-05-19 |
+| pyright-lsp | Anthropic | Docs only | ✅ SAFE | Documentation only — guides user to install Pyright via npm or brew. No plugin code | 2026-05-19 |
+| rust-analyzer-lsp | Anthropic | Docs only | ✅ SAFE | Documentation only — guides user to install rust-analyzer via rustup or brew. No plugin code | 2026-05-19 |
+| ruby-lsp | Anthropic | Docs only | ✅ SAFE | Documentation only — guides user to install ruby-lsp via gem. No plugin code | 2026-05-19 |
+| kotlin-lsp | Anthropic | Docs only | ✅ SAFE | Documentation only — guides user to install Kotlin LSP via brew or IntelliJ toolchain. No plugin code | 2026-05-19 |
+| swift-lsp | Anthropic | Docs only | ✅ SAFE | Documentation only — guides user to install sourcekit-lsp via Xcode or swift.org. No plugin code | 2026-05-19 |
+| lua-lsp | Anthropic | Docs only | ✅ SAFE | Documentation only — guides user to install lua-language-server via brew or mason. No plugin code | 2026-05-19 |
+| php-lsp | Anthropic | Docs only | ✅ SAFE | Documentation only — guides user to install Intelephense via npm. No plugin code | 2026-05-19 |
+| csharp-lsp | Anthropic | Docs only | ✅ SAFE | Documentation only — guides user to install OmniSharp or roslyn via dotnet. No plugin code | 2026-05-19 |
+| jdtls-lsp | Anthropic | Docs only | ✅ SAFE | Documentation only — guides user to install Eclipse JDT.LS via brew or manual download. Requires JDK 17+ | 2026-05-19 |
 | claude-code-setup | Anthropic | Agent + Skill | ✅ SAFE_WITH_CODE | Bash read-only (ls, cat) for project inspection — no network, no sensitive paths | 2026-05-18 |
 | github | GitHub | MCP (HTTP remote) | ✅ SAFE | HTTP bridge to `api.githubcopilot.com` — zero local code, token from env var | 2026-05-18 |
 | linear | Linear | MCP (HTTP remote) | ✅ SAFE | HTTP bridge to `mcp.linear.app` — zero local code | 2026-05-18 |
