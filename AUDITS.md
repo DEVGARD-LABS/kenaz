@@ -51,6 +51,13 @@ Real-world audit results from running Kenaz against widely-used Claude Code plug
 | firebase | Google | MCP (npx) | ⚠️ REVIEW | PA-020: `npx -y firebase-tools@latest` — no pin + `-y` flag + access to Firebase credentials | 2026-05-18 |
 | context7 | Upstash | MCP (npx) | ⚠️ REVIEW | PA-020: `npx -y @upstash/context7-mcp` — no pin + sends queries to external API by design | 2026-05-18 |
 | serena | Oraios | MCP (uvx/git) | ❌ DO_NOT_INSTALL | PA-020 HIGH: `uvx git+https://github.com/oraios/serena` — installs from HEAD with no commit hash. Unknown author. Any push to that repo executes on your machine. | 2026-05-18 |
+| asana | Asana | MCP (HTTP remote SSE) | ✅ SAFE | HTTP SSE bridge to `mcp.asana.com` — zero local code, token from env var | 2026-05-18 |
+| terraform | HashiCorp | MCP (Docker) | ✅ SAFE_WITH_CODE | Docker image pinned at `hashicorp/terraform-mcp-server:0.4.0` — containerized, TFE_TOKEN from env var, no local code to audit | 2026-05-18 |
+| laravel-boost | BeyondCode | MCP (PHP artisan) | ✅ SAFE_WITH_CODE | Runs user's own `php artisan boost:mcp` — zero external code, no network, executes code the user already owns and installed | 2026-05-18 |
+| fakechat | Anthropic | MCP (TypeScript/bun) | ✅ SAFE_WITH_CODE | Localhost-only test/demo tool bound to `127.0.0.1:8787` — zero external calls, WebSocket UI for simulating chat, bun.lock pins all deps | 2026-05-18 |
+| discord | Anthropic | MCP (TypeScript/bun) | ✅ SAFE_WITH_CODE | Transparent Discord bot — token from `~/.claude/channels/discord/.env`, `assertSendable()` prevents state file exfiltration, bun.lock pins deps (PA-021 mitigated) | 2026-05-18 |
+| imessage | Anthropic | MCP (TypeScript/bun) | ✅ SAFE_WITH_CODE | Reads local `~/Library/Messages/chat.db` + osascript for sending — no external network, pairing/allowlist access controls, `assertSendable()` guard, bun.lock pins deps | 2026-05-18 |
+| telegram | Anthropic | MCP (TypeScript/bun) | ✅ SAFE_WITH_CODE | Transparent Telegram bot — token from env, network limited to `api.telegram.org` (own bot), `safeName()` + `assertSendable()` injection/exfiltration guards, bun.lock pins deps (PA-021 mitigated) | 2026-05-18 |
 
 ---
 
