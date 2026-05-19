@@ -20,4 +20,5 @@ coverage/
 .DS_Store
 *.swp
 *.swo
-pycache
+__pycache__/
+*.pyc
