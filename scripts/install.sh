@@ -30,9 +30,10 @@ echo "  ✓ /kenaz              → kenaz-plugin/commands/kenaz.md"
 # ── Scripts ──────────────────────────────────────────────────────────────────
 mkdir -p "$CLAUDE_DIR/scripts"
 
-ln -sf "$KENAZ_DIR/scripts/audit-cache.sh"       "$CLAUDE_DIR/scripts/audit-cache.sh"
-ln -sf "$KENAZ_DIR/scripts/plugin-inventory.sh"  "$CLAUDE_DIR/scripts/plugin-inventory.sh"
-chmod +x "$KENAZ_DIR/scripts/audit-cache.sh" "$KENAZ_DIR/scripts/plugin-inventory.sh"
+ln -sf "$KENAZ_DIR/scripts/audit-cache.sh"                "$CLAUDE_DIR/scripts/audit-cache.sh"
+ln -sf "$KENAZ_DIR/scripts/plugin-inventory.sh"           "$CLAUDE_DIR/scripts/plugin-inventory.sh"
+ln -sf "$KENAZ_DIR/scripts/kenaz-fetch-and-classify.mjs"  "$CLAUDE_DIR/scripts/kenaz-fetch-and-classify.mjs"
+chmod +x "$KENAZ_DIR/scripts/audit-cache.sh" "$KENAZ_DIR/scripts/plugin-inventory.sh" "$KENAZ_DIR/scripts/kenaz-fetch-and-classify.mjs"
 echo "  ✓ Scripts             → kenaz-plugin/scripts/"
 
 # ── Version stamp ─────────────────────────────────────────────────────────────
