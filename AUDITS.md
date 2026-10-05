@@ -31,26 +31,26 @@ Real-world audit results from running Kenaz against widely-used Claude Code plug
 ## Most used
 
 <!-- stats-start -->
-Ranked by npm + PyPI downloads, last 30 days — snapshot **2026-09-28**. Re-run `/kenaz <plugin>` to get an updated verdict for any entry.
+Ranked by npm + PyPI downloads, last 30 days — snapshot **2026-10-05**. Re-run `/kenaz <plugin>` to get an updated verdict for any entry.
 
 > `firebase-tools` downloads reflect the full Firebase CLI, not MCP-specific usage. `@playwright/mcp` is likely inflated by CI pipelines. HTTP remote MCPs have no download metric.
 
 | # | Plugin | Downloads/mo | Verdict | Quick take |
 |---|---|---|---|---|
-| 1 | playwright | 24.4M | ⚠️ REVIEW | Unpinned `@latest` — pin version before use |
-| 2 | firebase | 10.8M | ⚠️ REVIEW | General CLI, not MCP-only — unpinned + `-y` flag ⚠️ inflated |
-| 3 | context7 | 3.1M | ⚠️ REVIEW | Unpinned `@latest` + external API by design |
-| 4 | filesystem | 2.9M | ✅ SAFE_WITH_CODE | Run `npm audit fix` (minimatch CVE) |
-| 5 | notion | 642K | ✅ SAFE_WITH_CODE | Pin to `@2.2.1` |
-| 6 | memory | 563K | ✅ SAFE_WITH_CODE | Local JSONL graph, zero network |
-| 7 | sequential-thinking | 503K | ✅ SAFE_WITH_CODE | Purely in-memory, zero network |
-| 8 | fetch (PyPI) | 465K | ✅ SAFE_WITH_CODE | PA-015 note: override phrasing in description |
-| 9 | sentry | 442K | ⚠️ REVIEW | `sendDefaultPii:true` ships tool context to `sentry.io` |
-| 10 | slack | 407K | ⚠️ REVIEW | npm/source version gap — cannot audit what executes |
-| 11 | next-devtools-mcp | 396K | ⚠️ REVIEW | PA-023 CRITICAL: `"FORGET ALL PRIOR KNOWLEDGE"` in tool description |
-| 12 | supabase | 393K | ✅ SAFE_WITH_CODE | Pin to `@0.8.1` |
-| 13 | git (PyPI) | 148K | ✅ SAFE_WITH_CODE | uv.lock + SHA256; flag-injection defense |
-| 14 | stripe | 54K | ✅ SAFE_WITH_CODE | All calls proxied to `mcp.stripe.com` — use restricted keys |
+| 1 | playwright | 28.6M | ⚠️ REVIEW | Unpinned `@latest` — pin version before use |
+| 2 | firebase | 12.8M | ⚠️ REVIEW | General CLI, not MCP-only — unpinned + `-y` flag ⚠️ inflated |
+| 3 | context7 | 2.9M | ⚠️ REVIEW | Unpinned `@latest` + external API by design |
+| 4 | filesystem | 2.6M | ✅ SAFE_WITH_CODE | Run `npm audit fix` (minimatch CVE) |
+| 5 | notion | 727K | ✅ SAFE_WITH_CODE | Pin to `@2.2.1` |
+| 6 | memory | 613K | ✅ SAFE_WITH_CODE | Local JSONL graph, zero network |
+| 7 | sequential-thinking | 516K | ✅ SAFE_WITH_CODE | Purely in-memory, zero network |
+| 8 | sentry | 500K | ⚠️ REVIEW | `sendDefaultPii:true` ships tool context to `sentry.io` |
+| 9 | fetch (PyPI) | 498K | ✅ SAFE_WITH_CODE | PA-015 note: override phrasing in description |
+| 10 | next-devtools-mcp | 470K | ⚠️ REVIEW | PA-023 CRITICAL: `"FORGET ALL PRIOR KNOWLEDGE"` in tool description |
+| 11 | slack | 444K | ⚠️ REVIEW | npm/source version gap — cannot audit what executes |
+| 12 | supabase | 427K | ✅ SAFE_WITH_CODE | Pin to `@0.8.1` |
+| 13 | git (PyPI) | 173K | ✅ SAFE_WITH_CODE | uv.lock + SHA256; flag-injection defense |
+| 14 | stripe | 63K | ✅ SAFE_WITH_CODE | All calls proxied to `mcp.stripe.com` — use restricted keys |
 
 **HTTP remote MCPs** (no npm metric, zero local code): github · figma · cloudflare · linear · gitlab · asana · greptile
 <!-- stats-end -->
